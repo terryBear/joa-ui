@@ -37,7 +37,6 @@ export const NavBar = () => {
 							to='/destination'>
 							Destinations
 						</Nav.Link>
-						// @ts-ignore
 						<Nav.Link
 							as={NavLink}
 							// @ts-ignore
@@ -47,7 +46,6 @@ export const NavBar = () => {
 							to='/safari-tour'>
 							Safari & Tours
 						</Nav.Link>
-						// @ts-ignore
 						<Nav.Link
 							as={NavLink}
 							// @ts-ignore
@@ -57,7 +55,6 @@ export const NavBar = () => {
 							to='/experiences'>
 							Experiences
 						</Nav.Link>
-						// @ts-ignore
 						<Nav.Link
 							as={NavLink}
 							// @ts-ignore
@@ -67,7 +64,6 @@ export const NavBar = () => {
 							to='/about-us'>
 							About Us
 						</Nav.Link>
-						// @ts-ignore
 						<Nav.Link
 							as={NavLink}
 							// @ts-ignore
