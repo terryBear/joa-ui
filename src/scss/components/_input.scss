@@ -1,0 +1,15 @@
+.form-control {
+  font-family: $typography-button-font-family;
+  font-size: 0.7em;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0px;
+  text-transform: uppercase !important;
+  padding: 0 20px;
+
+  &:focus {
+    box-shadow: 0 !important;
+    border-color: transparent !important;
+    outline: none !important;
+  }
+}

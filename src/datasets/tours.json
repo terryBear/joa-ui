@@ -1,0 +1,417 @@
+[
+    {
+        "id": 1,
+        "slug": "kruger-explorer",
+        "title": "Kruger Explorer",
+        "short_description": "A luxurious and immersive safari adventure.",
+        "long_description": "An unforgettable journey through Africa's finest landscapes.",
+        "featured_image": "/images/elephant-loxodonta-africana-mana-pools-zimbabw-2025-04-04-16-18-33-utc.jpg",
+        "images": [
+            "/images/elephant-at-zambezi-national-park-in-zimbabwe-2025-02-09-22-22-13-utc.jpg",
+            "/images/giraffe-uganda-africa-2024-09-12-00-57-00-utc.JPG"
+        ],
+        "rates": [
+            {
+                "currency": "USD",
+                "amount": 4659,
+                "year": 2025,
+                "helper_text": "Includes all park fees",
+                "rates_important_info": "Rates may vary by season"
+            }
+        ],
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "description": "Exciting activities for day 1"
+            },
+            {
+                "day": "Day 2",
+                "description": "Exciting activities for day 2"
+            },
+            {
+                "day": "Day 3",
+                "description": "Exciting activities for day 3"
+            },
+            {
+                "day": "Day 4",
+                "description": "Exciting activities for day 4"
+            },
+            {
+                "day": "Day 5",
+                "description": "Exciting activities for day 5"
+            }
+        ],
+        "inclusions": [
+            {
+                "title": "Park Fees",
+                "description": "All park fees included"
+            },
+            {
+                "title": "Meals",
+                "description": "All meals included"
+            },
+            {
+                "title": "Accommodation",
+                "description": "Luxury accommodation included"
+            }
+        ],
+        "exclusions": [
+            {
+                "title": "Flights",
+                "description": "International flights not included"
+            },
+            {
+                "title": "Travel Insurance",
+                "description": "Travel insurance not included"
+            }
+        ],
+        "destination": "Kenya",
+        "african_safari_experiences": [
+            {
+                "title": "Game Drive",
+                "description": "Spot the Big Five",
+                "image": "https://example.com/image2.jpg"
+            }
+        ],
+        "safari_types": [
+            {
+                "title": "Photographic Safari",
+                "description": "Capture stunning moments",
+                "image": "https://example.com/image2.jpg"
+            }
+        ],
+        "accomodation": [
+            "Tent",
+            "Apartment",
+            "Villa"
+        ],
+        "lodge": [
+            {
+                "title": "Savannah Lodge",
+                "description": "Luxury in the wild",
+                "image": "https://example.com/image3.jpg",
+                "coordinates": "-1.9577, 37.2972",
+                "location": "Botswana",
+                "type": "Lodge"
+            },
+            {
+                "title": "Savannah Lodge",
+                "description": "Luxury in the wild",
+                "image": "https://example.com/image4.jpg",
+                "coordinates": "-1.9577, 37.2972",
+                "location": "Kenya",
+                "type": "Lodge"
+            }
+        ],
+        "meals": [
+            "Dinner",
+            "Brunch",
+            "Snack"
+        ],
+        "exclusivity": [
+            "Shared",
+            "Exclusive"
+        ],
+        "amenities": [
+            "Pool",
+            "WiFi",
+            "Parking"
+        ],
+        "sustainability": [
+            "Green",
+            "Eco-Friendly"
+        ],
+        "transportation": [
+            "Boat",
+            "Car"
+        ],
+        "comfort_level": [
+            "Luxury",
+            "Basic"
+        ],
+        "duration": [
+            "14 Days"
+        ],
+        "map": [
+            {
+                "coordinates": [
+                    "-1.9577",
+                    "37.2972"
+                ],
+                "location": "Botswana"
+            }
+        ],
+        "features": [
+            {
+                "title": "Customizable Itinerary",
+                "description": "Tailor your trip"
+            }
+        ],
+        "highlights": [
+            {
+                "title": "Sunset Safari",
+                "description": "End your day with a golden view",
+                "image": "https://example.com/image2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "slug": "serengeti-adventure",
+        "title": "Serengeti Adventure",
+        "short_description": "Perfect for wildlife enthusiasts and nature lovers.",
+        "long_description": "A luxurious and immersive safari adventure.",
+        "featured_image": "/images/okavango-delta-botswana-2025-03-18-14-51-48-utc.jpg",
+        "images": [
+            "/images/okavango-delta-botswana-2025-03-18-14-51-36-utc.jpg",
+            "/images/male-lion-panthera-leo-in-front-of-safari-vehicl-2024-10-18-10-46-31-utc.jpg"
+        ],
+        "rates": [
+            {
+                "currency": "USD",
+                "amount": 2138,
+                "year": 2025,
+                "helper_text": "Includes all park fees",
+                "rates_important_info": "Rates may vary by season"
+            }
+        ],
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "description": "Exciting activities for day 1"
+            },
+            {
+                "day": "Day 2",
+                "description": "Exciting activities for day 2"
+            },
+            {
+                "day": "Day 3",
+                "description": "Exciting activities for day 3"
+            },
+            {
+                "day": "Day 4",
+                "description": "Exciting activities for day 4"
+            },
+            {
+                "day": "Day 5",
+                "description": "Exciting activities for day 5"
+            }
+        ],
+        "inclusions": [
+            {
+                "title": "Park Fees",
+                "description": "All park fees included"
+            }
+        ],
+        "exclusions": [
+            {
+                "title": "Flights",
+                "description": "International flights not included"
+            }
+        ],
+        "destination": "Tanzania",
+        "african_safari_experiences": [
+            {
+                "title": "Game Drive",
+                "description": "Spot the Big Five",
+                "image": "https://example.com/image3.jpg"
+            }
+        ],
+        "safari_types": [
+            {
+                "title": "Photographic Safari",
+                "description": "Capture stunning moments",
+                "image": "https://example.com/image3.jpg"
+            }
+        ],
+        "accomodation": [
+            "Flat",
+            "Resort",
+            "House"
+        ],
+        "lodge": [
+            {
+                "title": "Savannah Lodge",
+                "description": "Luxury in the wild",
+                "image": "https://example.com/image3.jpg",
+                "coordinates": "-1.9577, 37.2972",
+                "location": "South Africa",
+                "type": "Cabin"
+            },
+            {
+                "title": "Savannah Lodge",
+                "description": "Luxury in the wild",
+                "image": "https://example.com/image4.jpg",
+                "coordinates": "-1.9577, 37.2972",
+                "location": "Kenya",
+                "type": "Lodge"
+            }
+        ],
+        "meals": [
+            "Breakfast",
+            "Lunch",
+            "Dinner"
+        ],
+        "exclusivity": [
+            "Private",
+            "Exclusive"
+        ],
+        "amenities": [
+            "Spa",
+            "Parking",
+            "WiFi"
+        ],
+        "sustainability": [
+            "Sustainable",
+            "Eco-Friendly"
+        ],
+        "transportation": [
+            "Plane",
+            "Car"
+        ],
+        "comfort_level": [
+            "Standard",
+            "Basic"
+        ],
+        "duration": [
+            "7 Days"
+        ],
+        "map": [
+            {
+                "coordinates": [
+                    "-1.9577",
+                    "37.2972"
+                ],
+                "location": "South Africa"
+            }
+        ],
+        "features": [
+            {
+                "title": "Customizable Itinerary",
+                "description": "Tailor your trip"
+            }
+        ],
+        "highlights": [
+            {
+                "title": "Sunset Safari",
+                "description": "End your day with a golden view",
+                "image": "https://example.com/image1.jpg"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Masai Mara Safari",
+        "slug": "masai-mara-safari",
+        "short_description": "A thrilling adventure in the heart of Africa.",
+        "long_description": "Experience the wild like never before.",
+        "featured_image": "/images/elephant-at-zambezi-national-park-in-zimbabwe-2025-02-09-22-22-13-utc.jpg",
+        "images": [
+            "/images/elephant-loxodonta-africana-mana-pools-zimbabw-2025-04-04-16-18-33-utc.jpg",
+            "/images/baboon-uganda-africa-2024-09-12-04-39-25-utc.JPG"
+        ],
+        "rates": [
+            {
+                "currency": "USD",
+                "amount": 3500,
+                "year": 2025,
+                "helper_text": "Includes all park fees",
+                "rates_important_info": "Rates may vary by season"
+            }
+        ],
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "description": "Exciting activities for day 1"
+            },
+            {
+                "day": "Day 2",
+                "description": "Exciting activities for day 2"
+            },
+            {
+                "day": "Day 3",
+                "description": "Exciting activities for day 3"
+            },
+            {
+                "day": "Day 4",
+                "description": "Exciting activities for day 4"
+            },
+            {
+                "day": "Day 5",
+                "description": "Exciting activities for day 5"
+            }
+        ],
+        "inclusions": [
+            {
+                "title": "Park Fees",
+                "description": "All park fees included"
+            }
+        ],
+        "exclusions": [
+            {
+                "title": "",
+                "description": ""
+            }
+        ],
+        "destination": "",
+        "african_safari_experiences": [
+            {
+                "title": "Game Drive",
+                "description": "Spot the Big Five",
+                "image": "https://example.com/image4.jpg"
+            }
+        ],
+        "safari_types": [
+            {
+                "title": "Photographic Safari",
+                "description": "Capture stunning moments",
+                "image": "https://example.com/image4.jpg"
+            }
+        ],
+        "accomodation": [
+            "Tent",
+            "Apartment",
+            "Villa"
+        ],
+        "lodge": [
+            {
+                "title": "Savannah Lodge",
+                "description": "Luxury in the wild",
+                "image": "https://example.com/image4.jpg",
+                "coordinates": "-1.9577, 37.2972",
+                "location": "Kenya",
+                "type": "Lodge"
+            },
+            {
+                "title": "Savannah Lodge",
+                "description": "Luxury in the wild",
+                "image": "https://example.com/image4.jpg",
+                "coordinates": "-1.9577, 37.2972",
+                "location": "Botswana",
+                "type": "Lodge"
+            }
+        ],
+        "meals": [
+            "Dinner",
+            "Brunch",
+            "Snack"
+        ],
+        "exclusivity": [
+            "Shared",
+            "Exclusive"
+        ],
+        "amenities": [
+            "Pool",
+            "WiFi",
+            "Parking"
+        ],
+        "sustainability": [
+            "Green",
+            "Eco-Friendly"
+        ],
+        "transportation": [
+            "Boat",
+            "Car"
+        ]
+    }
+]

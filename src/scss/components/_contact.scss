@@ -1,0 +1,13 @@
+.safari-enquiry {
+  .step {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .form-detail {
+    padding: 2em;
+  }
+}

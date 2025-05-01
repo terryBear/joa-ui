@@ -1,0 +1,24 @@
+.page-detail-carousel {
+  .carousel-inner {
+    height: 100%;
+    .carousel-caption {
+      padding: 2em;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      text-align: left;
+      //   background-color: rgba(0, 0, 0, 0.5);
+
+      > * {
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        color: $white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-detail-carousel {
+    min-height: 50vh;
+  }
+}

@@ -1,0 +1,19 @@
+.top-main-navbar {
+  .nav-item {
+    .form-control {
+      margin: 0;
+    }
+    .nav-link {
+      font-size: 12px;
+      margin: 0 20px;
+      padding: 0 !important;
+      font-weight: 600;
+      font-family: $typography-button-font-family;
+      color: #54595f !important;
+
+      &.active {
+        color: $primary !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.p-steps {
+  display: flex;
+  width: 100%;
+  margin: 0 0 4em;
+  padding: 0 4em 0 2em;
+  ol {
+    padding: 0;
+    display: flex;
+    width: 100%;
+    margin: 0;
+
+    li {
+      &:nth-child(1) {
+        text-align: left;
+      }
+      &:nth-child(4) {
+        text-align: right;
+      }
+    }
+    .p-steps-item {
+      width: 25%;
+      display: block;
+      text-align: center;
+      .p-menuitem-link {
+        text-decoration: none;
+
+        .p-steps-number {
+          display: none;
+        }
+      }
+    }
+  }
+}

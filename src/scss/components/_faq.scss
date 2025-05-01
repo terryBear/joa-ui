@@ -1,0 +1,41 @@
+.faq-list-container {
+  text-align: left;
+
+  ul {
+    margin: 1rem 0 0 0;
+    padding: 0;
+    li {
+      list-style: none;
+      button {
+        width: 100%;
+        text-align: left;
+        font-family: $typography-heading-font-family;
+        text-transform: initial;
+        font-size: $font-size-md;
+        margin: 0 0 20px;
+        color: $gray-900;
+        text-decoration: none;
+        min-height: 50px;
+        padding: 20px;
+
+        &.active {
+          color: $primary;
+          background-color: #efefef;
+        }
+      }
+    }
+  }
+
+  .faq-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 3em;
+    white-space: pre-line;
+    margin-left: -30px;
+
+    &.active {
+      display: block;
+      background-color: #efefef;
+    }
+  }
+}
