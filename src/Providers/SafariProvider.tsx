@@ -2,14 +2,29 @@ import {
   createContext,
   Dispatch,
   FC,
-  memo,
   SetStateAction,
-  use,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
 import { Tour } from "../types/tours";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCGmS_dk5RTo5bkYG4Z7tTTdvBsBQNLhPE",
+  authDomain: "dev-joasafaris.firebaseapp.com",
+  projectId: "dev-joasafaris",
+  storageBucket: "dev-joasafaris.firebasestorage.app",
+  messagingSenderId: "499230620448",
+  appId: "1:499230620448:web:b87b4ad7bd761259baf545",
+  measurementId: "G-WBTW3XMGNX",
+};
 
 interface ProviderContextType {
   tours: Tour[];
@@ -22,9 +37,20 @@ const AppContext = createContext<ProviderContextType>(
   {} as ProviderContextType
 );
 
-export const SafariProvider = ({ children }) => {
+interface SafariProviderProps {
+  children: React.ReactNode;
+}
+
+export const SafariProvider: FC<SafariProviderProps> = ({ children }) => {
   const [tours, setTours] = useState<Tour[]>([]);
   const [activeTour, setActiveTour] = useState<Tour | null>(null);
+
+  useEffect(() => {
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    console.log("Firebase initialized", analytics);
+  }, []);
 
   const value = useMemo(
     () => ({

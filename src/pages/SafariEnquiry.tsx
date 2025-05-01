@@ -4,8 +4,6 @@ import { TravelStyle } from "../components/SafariEnquiry/FormComponents/TravelSt
 import { Budget } from "../components/SafariEnquiry/FormComponents/Budget";
 import { ContactInfo } from "../components/SafariEnquiry/FormComponents/ContactInfo";
 import { Button, Container, Form } from "react-bootstrap";
-import { Header } from "../components/Header/Header";
-import { Footer } from "../components/Footer/Footer";
 import { Banner } from "../components/Banner/Banner";
 
 import { Steps } from "primereact/steps";
@@ -20,9 +18,9 @@ export interface StepWizardProps {
 export const SafariEnquiry = () => {
   const [activeStep, setActiveStep] = useState(1);
 
-  const handleFormChange = (number) => {};
+  const handleFormChange = () => {};
 
-  const [steps, setSteps] = useState<StepWizardProps[]>([
+  const [steps] = useState<StepWizardProps[]>([
     {
       index: 1,
       label: "Trip Details",

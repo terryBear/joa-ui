@@ -2,7 +2,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Banner } from "../components/Banner/Banner";
 import { ContactForm } from "../components/Forms/ContactForm";
 import { MainAppLayout } from "../layout/Layout";
-import { Divider } from "../ui-library/Divider";
 
 export const ContactUs = () => {
   return (
@@ -42,22 +41,38 @@ export const ContactUs = () => {
                 </a>
               </p>
               <p>
-                <a href="tel:+27 12 656 1831" target="_blank" className="text-decoration-none">
+                <a
+                  href="tel:+27 12 656 1831"
+                  target="_blank"
+                  className="text-decoration-none"
+                >
                   SA Office: +27 12 656 1831
                 </a>
               </p>
               <p>
-                <a href="tel:+1 813 217 5479" target="_blank" className="text-decoration-none">
+                <a
+                  href="tel:+1 813 217 5479"
+                  target="_blank"
+                  className="text-decoration-none"
+                >
                   US Mobile: +1 813 217 5479
                 </a>
               </p>
               <p>
-                <a href="tel:+27 82 821 8876" target="_blank" className="text-decoration-none">
+                <a
+                  href="tel:+27 82 821 8876"
+                  target="_blank"
+                  className="text-decoration-none"
+                >
                   Emergency: +27 82 821 8876
                 </a>
               </p>
               <p>
-                <a href="mail:travel@joasafaris.com" target="_blank" className="text-decoration-none">">
+                <a
+                  href="mail:travel@joasafaris.com"
+                  target="_blank"
+                  className="text-decoration-none"
+                >
                   Email: travel@joasafaris.com
                 </a>
               </p>

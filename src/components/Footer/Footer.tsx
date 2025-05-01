@@ -1,6 +1,5 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Divider } from "../../ui-library/Divider";
-import { formatDate } from "../../utils";
 import { Link } from "react-router";
 import { SocialLinks } from "../SocialLinks/SocialLinks";
 
