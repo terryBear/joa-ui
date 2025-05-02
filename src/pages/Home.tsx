@@ -1,4 +1,5 @@
 import { Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router'
 import { Banner } from '../components/Banner/Banner'
 import { CtaBanner } from '../components/Banner/CtaBanner'
 import { PageDetail } from '../components/Page/PageDetail/PageDetail'
@@ -16,6 +17,7 @@ const Helmet = () => {
 }
 
 export const Home = () => {
+	const navigate = useNavigate()
 	return (
 		<MainAppLayout>
 			<Helmet />
@@ -23,7 +25,7 @@ export const Home = () => {
 				hero={true}
 				image='/business/hero/banner-hero-2.jpeg'
 				button={
-					<Button type='submit' className='mt-3 px-5' variant='outline-info'>
+					<Button type='button' className='mt-3 px-5' variant='outline-info' onClick={() => navigate('/safari-tour')}>
 						Show More
 					</Button>
 				}
