@@ -23,7 +23,7 @@ export const NavBar = () => {
 					className={({ isActive }: { isActive: any }) => (isActive ? 'active' : '')}
 					to='/'
 					style={{ width: 136 }}>
-					<Image fluid={true} src='/business/logowebp.webp' alt='Logo' />
+					<Image fluid={true} src='/business/logos/shadow.jpeg' alt='Logo' />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>

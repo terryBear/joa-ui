@@ -1,7 +1,7 @@
 // Lux 5.3.5
 // Bootswatch
 
-$theme: "lux" !default;
+$theme: 'lux' !default;
 
 //
 // Color system
@@ -30,21 +30,42 @@ $green: #91913e !default;
 $teal: #20c997 !default;
 $cyan: #1f9bcf !default;
 
-$typography-primary-font-family: "Cabin";
-$typography-primary-font-weight: 400;
-$typography-button-font-family: "Montserrat";
-$typography-button-font-weight: 700;
-$typography-heading-font-family: "Playfair Display";
-$typography-heading-font-weight: 700;
+// NEW UI COLORS
+$ui-primary: #8b8c6f !default;
+$ui-secondary: #a37c52 !default;
+$ui-success: $green !default;
+$ui-info: #d5b972 !default;
+$ui-warning: $yellow !default;
+$ui-danger: $red !default;
+$ui-light: #f5f1eb !default;
+$ui-dark: #393733 !default;
 
-$primary: $green !default;
-$secondary: $white !default;
+$typography-primary-font-family: 'Inter';
+$typography-primary-font-weight: 400;
+$typography-button-font-family: 'Inter';
+$typography-button-font-weight: 600;
+$typography-heading-font-family: 'Canela Medium';
+$typography-heading-font-weight: 500;
+
+// NEW UI COLORS
+$primary: $ui-primary !default;
+$secondary: $ui-secondary !default;
 $success: $green !default;
-$info: $blue !default;
+$info: $ui-info !default;
 $warning: $yellow !default;
 $danger: $red !default;
-$light: $white !default;
-$dark: $gray-900 !default;
+$light: $ui-light !default;
+$dark: $ui-dark !default;
+
+// TODO: OLD UI COLORS
+// $primary: $green !default;
+// $secondary: $white !default;
+// $success: $green !default;
+// $info: $blue !default;
+// $warning: $yellow !default;
+// $danger: $red !default;
+// $light: $white !default;
+// $dark: $gray-900 !default;
 
 $min-contrast-ratio: 1.9 !default;
 
@@ -59,9 +80,8 @@ $body-color: $gray-700 !default;
 // Fonts
 
 // stylelint-disable-next-line value-keyword-case
-$font-family-sans-serif: "Nunito Sans", -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
 $font-weight-lighter: lighter !default;
 $font-weight-light: 200 !default;

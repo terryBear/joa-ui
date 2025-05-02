@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { InputText } from 'primereact/inputtext'
-import { InputTextarea } from 'primereact/inputtextarea'
 import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
@@ -14,35 +13,25 @@ export const NewsletterForm = () => {
 	})
 	return (
 		<Form onSubmit={() => {}}>
-			<Form.Group className='mb-4'>
+			<Form.Group>
 				<InputText
-					className='w-75'
+					className='w-100'
 					value={contact.name}
 					onChange={(e) => setContact({ ...contact, name: e.target.value })}
 					placeholder='Ex: John Doe'
 				/>
 			</Form.Group>
-			<Form.Group className='mb-4'>
+			<Form.Group>
 				<InputText
-					className='w-75'
+					className='w-100'
 					id='email'
 					placeholder='example@mail.com'
 					value={contact.email}
 					onChange={(e) => setContact({ ...contact, email: e.target.value })}
 				/>
 			</Form.Group>
-			<Form.Group className='mb-4'>
-				<InputTextarea
-					className='w-75'
-					id='message'
-					rows={5}
-					placeholder='Comment'
-					value={contact.message}
-					onChange={(e) => setContact({ ...contact, message: e.target.value })}
-				/>
-			</Form.Group>
-			<Form.Group className='mb-3' controlId='formBasicEmail'>
-				<Button variant='primary' className='px-5' type='submit'>
+			<Form.Group controlId='formBasicEmail'>
+				<Button variant='primary' type='submit'>
 					Subscribe Now
 				</Button>
 			</Form.Group>

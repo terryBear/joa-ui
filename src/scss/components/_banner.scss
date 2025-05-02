@@ -1,88 +1,140 @@
 .banner {
-  background-image: url("/images/zimbabwean-sunset-2025-01-29-07-27-48-utc.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+	background-image: url('/images/zimbabwean-sunset-2025-01-29-07-27-48-utc.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 
-  &.newsletter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	.banner__content {
+		padding: 3em 1em;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: $white;
+		width: 100%;
+		height: 100%;
+		min-height: 30vh;
 
-    background-image: url("/images/a-hippopotamus-swimming-with-just-head-and-ears-ab-2025-04-03-23-08-22-utc.jpg");
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: inherit;
+		}
 
-    .banner__content {
-      padding: 15em 1em;
+		> *:not(.container) {
+			max-width: 1300px;
+		}
 
-      .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+		p {
+			font-size: 22px;
+			font-weight: 400;
+		}
+	}
 
-        .row {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
+	&.hero {
+		background-image: url('/images/zimbabwean-sunset-2025-01-29-07-27-48-utc.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-top: 100px;
 
-          .col-12 {
-            &:nth-child(1) {
-              padding-right: 20%;
+		.banner__content {
+			padding: 3em 1em;
+			background-color: rgba(0, 0, 0, 0.5);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			text-align: left;
+			color: $white;
+			width: 100%;
+			height: 100%;
+			min-height: 100vh;
 
-              h1,
-              h2,
-              h3,
-              h4,
-              h5,
-              h6,
-              p {
-                text-shadow: 5px 5px 19px $black;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: inherit;
+				width: 65%;
+				font-weight: 100;
+				font-family: 'Canela Thin';
+				font-size: 6em;
+			}
 
-  .banner__content {
-    padding: 120px 1em 2em;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: $white;
-    width: 100%;
-    height: 100%;
-    min-height: 70vh;
+			p {
+				font-size: 18px;
+				font-weight: 400;
+				width: 50%;
+				line-height: 1.8;
+			}
+		}
+	}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: inherit;
-    }
+	&.newsletter {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: $ui-dark;
+		background-image: none;
 
-    > *:not(.container) {
-      max-width: 1300px;
-    }
+		.banner__content {
+			padding: 2em;
+			min-height: 0;
+			background-color: $ui-dark;
 
-    p {
-      font-size: 22px;
-      font-weight: 400;
-    }
-  }
+			.container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				p {
+					color: $ui-info !important;
+				}
 
-  .banner__form {
-    text-align: center;
-    .card {
-      padding: 3em 0;
-    }
-  }
+				.banner__form {
+					text-align: center;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					.card {
+						padding: 0;
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						width: 100%;
+						background-color: transparent;
+
+						form {
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							align-items: center;
+
+							> div {
+								margin-left: 1em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -1,96 +1,171 @@
-@import "primereact/resources/themes/saga-green/theme.css"; // theme
+@import 'primereact/resources/themes/saga-green/theme.css'; // theme
 
 /** IMPORT BOOTSTRAP SCSS **/
-@import "variables";
-@import "bootstrap/scss/bootstrap";
-@import "bootswatch";
+@import 'variables';
+@import 'bootstrap/scss/bootstrap';
+@import 'bootswatch';
 
 /** IMPORT CUSTOM SCSS **/
-@import "./components/banner";
-@import "./components/navbar";
-@import "./components/input";
-@import "./components/topbar";
-@import "./components/tour";
-@import "./components/footer";
-@import "./components/page";
-@import "./components/tabs";
-@import "./components/carousel";
-@import "./components/contact";
-@import "./components/form";
-@import "./components/steps";
-@import "./components/faq";
-@import "./components/map";
+@import './components/banner';
+@import './components/navbar';
+@import './components/input';
+@import './components/topbar';
+@import './components/tour';
+@import './components/footer';
+@import './components/page';
+@import './components/tabs';
+@import './components/carousel';
+@import './components/contact';
+@import './components/form';
+@import './components/steps';
+@import './components/faq';
+@import './components/map';
 
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@font-face {
+	font-family: 'Canela Thin';
+	src: url('/fonts/Canela-Thin-Trial.otf'), url('/fonts/Canela-ThinItalic-Trial.otf'), url('/fonts/CanelaCondensed-Thin-Trial.otf'),
+		url('/fonts/CanelaCondensed-ThinItalic-Trial.otf'), url('/fonts/CanelaDeck-Thin-Trial.otf'),
+		url('/fonts/CanelaDeck-ThinItalic-Trial.otf'), url('/fonts/CanelaText-Thin-Trial.otf'),
+		url('/fonts/CanelaText-ThinItalic-Trial.otf');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Canela Light';
+	src: url('/fonts/Canela-Light-Trial.otf'), url('/fonts/Canela-LightItalic-Trial.otf'), url('/fonts/CanelaCondensed-Light-Trial.otf'),
+		url('/fonts/CanelaCondensed-LightItalic-Trial.otf'), url('/fonts/CanelaDeck-Light-Trial.otf'),
+		url('/fonts/CanelaDeck-LightItalic-Trial.otf'), url('/fonts/CanelaText-Light-Trial.otf'),
+		url('/fonts/CanelaText-LightItalic-Trial.otf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Canela';
+	src: url('/fonts/Canela-Regular-Trial.otf'), url('/fonts/Canela-RegularItalic-Trial.otf'),
+		url('/fonts/CanelaCondensed-Regular-Trial.otf'), url('/fonts/CanelaCondensed-RegularItalic-Trial.otf'),
+		url('/fonts/CanelaDeck-Regular-Trial.otf'), url('/fonts/CanelaDeck-RegularItalic-Trial.otf'),
+		url('/fonts/CanelaText-Regular-Trial.otf'), url('/fonts/CanelaText-RegularItalic-Trial.otf'),
+		url('/fonts/CanelaText-RegularNo2-Trial.otf'), url('/fonts/CanelaText-RegularNo2Italic-Trial.otf');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Canela Medium';
+	src: url('/fonts/Canela-Medium-Trial.otf'), url('/fonts/Canela-MediumItalic-Trial.otf'), url('/fonts/CanelaCondensed-Medium-Trial.otf'),
+		url('/fonts/CanelaCondensed-MediumItalic-Trial.otf'), url('/fonts/CanelaDeck-Medium-Trial.otf'),
+		url('/fonts/CanelaDeck-MediumItalic-Trial (1).otf'), url('/fonts/CanelaDeck-MediumItalic-Trial.otf'),
+		url('/fonts/CanelaText-Medium-Trial.otf'), url('/fonts/CanelaText-MediumItalic-Trial.otf');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Canela Bold';
+	src: url('/fonts/Canela-Bold-Trial.otf'), url('/fonts/Canela-BoldItalic-Trial.otf'), url('/fonts/CanelaCondensed-Bold-Trial.otf'),
+		url('/fonts/CanelaCondensed-BoldItalic-Trial.otf'), url('/fonts/CanelaDeck-Bold-Trial.otf'),
+		url('/fonts/CanelaDeck-BoldItalic-Trial.otf'), url('/fonts/CanelaText-Bold-Trial.otf'),
+		url('/fonts/CanelaText-BoldItalic-Trial.otf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Canela Black';
+	src: url('/fonts/Canela-Black-Trial.otf'), url('/fonts/Canela-BlackItalic-Trial.otf'), url('/fonts/CanelaCondensed-Black-Trial.otf'),
+		url('/fonts/CanelaCondensed-BlackItalic-Trial.otf'), url('/fonts/CanelaDeck-Black-Trial.otf'),
+		url('/fonts/CanelaDeck-BlackItalic-Trial.otf'), url('/fonts/CanelaText-Black-Trial.otf'),
+		url('/fonts/CanelaText-BlackItalic-Trial.otf');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
 
 .font-family-primary {
-  font-family: $typography-primary-font-family !important;
+	font-family: $typography-primary-font-family !important;
 }
 .font-family-button {
-  font-family: $typography-button-font-family !important;
-  letter-spacing: 2px;
+	font-family: $typography-button-font-family !important;
+	letter-spacing: 2px;
 }
 .font-family-heading {
-  font-family: $typography-heading-font-family !important;
+	font-family: $typography-heading-font-family !important;
 }
 
 :root {
-  --bs-nav-tabs-link-active-color: $white !important;
-  --bs-nav-tabs-link-active-bg: $primary !important;
-  --bs-nav-tabs-link-active-border-color: $primary !important;
-  --bs-nav-link-color: $gray-800 !important;
+	--bs-nav-tabs-link-active-color: #{$white} !important;
+	--bs-nav-tabs-link-active-bg: #{$primary} !important;
+	--bs-nav-tabs-link-active-border-color: #{$primary} !important;
+	--bs-nav-link-color: #{$gray-800} !important;
+	--joa-ui-radius: 10px !important;
+	--joa-ui-radius-sm: 4px !important;
+	--joa-ui-radius-md: 8px !important;
+	--joa-ui-radius-ld: 24px !important;
 }
 
 body {
-  background-color: #f9fafa;
+	background-color: $ui-light;
+	letter-spacing: 0;
 }
 
 /** GLOBAL STYLES **/
 h1 {
-  font-size: 55px;
+	font-size: 55px;
 }
 
 h2 {
-  font-size: 45px;
+	font-size: 45px;
 }
 
 h3 {
-  font-size: 38px;
+	font-size: 38px;
 }
 
 h4 {
-  font-size: 27px;
+	font-size: 27px;
 }
 
 h5 {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 h6 {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 .text-left {
-  text-align: left;
+	text-align: left;
 }
 
 .text-right {
-  text-align: right;
+	text-align: right;
 }
 
 .main-header-top {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-  background-color: $white;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+	background-color: $white;
 }
 
 .main-video {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  margin-bottom: -10px;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	margin-bottom: -10px;
+}
+
+.p-inputtext {
+	border-radius: var(--joa-ui-radius);
 }

@@ -1,65 +1,65 @@
 .tour-card {
-  background-color: $body-secondary-color;
-  border-radius: 0.25rem;
-  margin-bottom: 0;
-  background-image: url("/images/zimbabwean-sunset-2025-01-29-07-27-48-utc.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 350px;
-  position: relative;
-  z-index: 1;
+	background-color: $body-secondary-color;
+	border-radius: 0.25rem;
+	margin-bottom: 0;
+	background-image: url('/images/zimbabwean-sunset-2025-01-29-07-27-48-utc.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 450px;
+	position: relative;
+	z-index: 1;
 
-  .tour-card__overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: $white;
-    width: 100%;
-    height: 100%;
-    min-height: 350px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-  }
+	.tour-card__overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 0.5rem;
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: $white;
+		width: 100%;
+		height: 100%;
+		min-height: 450px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+	}
 
-  .tour-card__content {
-    position: relative;
-    z-index: 3;
-    padding: 1em;
-    color: $white;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: space-between;
-    height: 100%;
-    .btn-link {
-      font-size: $font-size-md;
-      text-transform: none;
-      color: $white;
-      font-weight: 600;
-      letter-spacing: 0;
-    }
+	.tour-card__content {
+		position: relative;
+		z-index: 3;
+		padding: 1em;
+		color: $white;
+		display: flex;
+		flex-direction: column;
+		align-items: baseline;
+		justify-content: space-between;
+		height: 100%;
+		.btn-link {
+			font-size: $font-size-md;
+			text-transform: none;
+			color: $white;
+			font-weight: 600;
+			letter-spacing: 0;
+		}
 
-    .tour-detail {
-      font-size: $font-size-sm;
-    }
+		.tour-detail {
+			font-size: $font-size-sm;
+		}
 
-    .tour-car-price {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      background-color: $primary;
-      padding: 10px 20px;
-      border-radius: 3px;
-    }
-  }
+		.tour-car-price {
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			background-color: $ui-secondary;
+			padding: 10px 20px;
+			border-radius: 3px;
+		}
+	}
 }
