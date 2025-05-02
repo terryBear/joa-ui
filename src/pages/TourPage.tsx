@@ -76,7 +76,7 @@ export const TourPage = () => {
 					<Row className='mt-5'>
 						<Col xs={12}>
 							<Breadcrumb />
-							<h1 className='m-0'>{tour?.title}</h1>
+							<h1 className='mt-3'>{tour?.title}</h1>
 							<p className='mt-0 mb-4'>{tour?.short_description}</p>
 						</Col>
 
@@ -84,11 +84,14 @@ export const TourPage = () => {
 							<PageDetailCarousel size='full' slides={CAROUSEL} />
 						</Col>
 						<Col xs={12} md={4} lg={3} className=''>
-							<div className='card p-4 border-1 mb-3 bg-primary'>
-								<h4 className='font-family-button fw-bolder m-0 text-white'>
+							<div className='card p-4 border-1 mb-3 '>
+								<p className='m-0 text-uppercase fw-bold'>
+									<small>from</small>
+								</p>
+								<h3 className='number-font fw-bolder m-0 text-primary'>
 									{formatCurrency(tour?.rates[0]?.amount, tour?.rates[0]?.currency)}
-								</h4>
-								<p className='m-0 text-white'>
+								</h3>
+								<p className='m-0 '>
 									<small>per person sharing</small>
 								</p>
 							</div>
@@ -159,11 +162,7 @@ export const TourPage = () => {
 									/>
 								</div>
 								<div>
-									<Button
-										variant='primary'
-										className='m-0 w-100 mb-3'
-										size='sm'
-										onClick={() => console.log('Request Quote')}>
+									<Button variant='info' className='m-0 w-100 mb-3' onClick={() => console.log('Request Quote')}>
 										Request Quote
 									</Button>
 								</div>

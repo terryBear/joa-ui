@@ -166,6 +166,11 @@ h6 {
 	margin-bottom: -10px;
 }
 
-.p-inputtext {
+.p-inputtext,
+.p-dropdown {
 	border-radius: var(--joa-ui-radius);
+}
+
+.number-font {
+	font-family: $typography-number-font-family !important;
 }

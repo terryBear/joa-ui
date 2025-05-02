@@ -24,7 +24,7 @@ $web-font-path: 'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400.
 	&-nav {
 		margin: 0 11px;
 		.nav-link {
-			padding: 0.715rem 8px;
+			padding: 0.715rem 24px !important;
 			color: $gray-700;
 			letter-spacing: 2px;
 			line-height: 23px;
@@ -33,6 +33,11 @@ $web-font-path: 'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400.
 			&:focus {
 				color: $primary;
 				text-decoration: none;
+			}
+
+			&.active {
+				font-weight: 900;
+				color: $ui-primary;
 			}
 		}
 	}
@@ -66,6 +71,7 @@ $web-font-path: 'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400.
 	font-family: $typography-button-font-family;
 	font-weight: $typography-button-font-weight;
 	border-radius: var(--joa-ui-radius);
+	letter-spacing: 1px;
 
 	&-sm {
 		font-size: 13px;

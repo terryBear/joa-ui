@@ -44,7 +44,9 @@ export const TourCard = ({ handleClick: emitClick, tour = null }: TourCardProps)
 						{tour?.comfort_level?.join(', ')}
 					</p>
 					<div className='tour-car-price'>
-						<span className='tour-price'>{formatCurrency(tour?.rates?.[0]?.amount, tour?.rates?.[0]?.currency)}</span>
+						<span className='tour-price number-font fw-bold'>
+							{formatCurrency(tour?.rates?.[0]?.amount, tour?.rates?.[0]?.currency)}
+						</span>
 					</div>
 				</div>
 			</div>
