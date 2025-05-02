@@ -9,6 +9,9 @@
 	height: 450px;
 	position: relative;
 	z-index: 1;
+	filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+	-webkit-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+	-moz-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
 
 	.tour-card__overlay {
 		background-color: rgba(0, 0, 0, 0.5);

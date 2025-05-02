@@ -15,7 +15,7 @@ export const CtaBanner = () => {
 				<h2>Request Luxurious African Safari Tour Quote</h2>
 				<p>Customize my African Safari</p>
 				<Link to='/safari-enquiry'>
-					<Button variant='info' className='mt-3' style={{ borderRadius: 'var(--joa-ui-radius)' }}>
+					<Button variant='secondary' className='mt-3' style={{ borderRadius: 'var(--joa-ui-radius)' }}>
 						Request a quote
 					</Button>
 				</Link>

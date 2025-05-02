@@ -48,8 +48,8 @@ export const TourLayoutGrid = () => {
 					</Row>
 					<Row>
 						<Col xs={12} className='text-left'>
-							<Button type='submit' className='mt-3 px-5' size='sm' variant='info'>
-								Show More
+							<Button type='button' className='mt-3 px-5 w-100' variant='outline-dark'>
+								show more
 							</Button>
 						</Col>
 					</Row>

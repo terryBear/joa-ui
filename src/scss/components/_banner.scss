@@ -83,13 +83,13 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background-color: $ui-dark;
+		background-color: $gray-900;
 		background-image: none;
 
 		.banner__content {
 			padding: 2em;
 			min-height: 0;
-			background-color: $ui-dark;
+			background-color: $gray-900;
 
 			.container {
 				display: flex;

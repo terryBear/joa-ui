@@ -3,7 +3,7 @@ import { Calendar } from 'primereact/calendar'
 import { Dropdown } from 'primereact/dropdown'
 import { useEffect, useState } from 'react'
 import { Accordion, Button, Col, Container, Row, Tab, Tabs } from 'react-bootstrap'
-import { NavLink, useLocation, useParams } from 'react-router'
+import { Link, NavLink, useLocation, useParams } from 'react-router'
 import { MapElement } from '../components/Map/Map'
 import { PageDetailCarousel } from '../components/Page/PageDetail/components/PageDetailCarousel'
 import { TourCard } from '../components/Tours/TourCard/TourCard'
@@ -299,9 +299,11 @@ export const TourPage = () => {
 							</Row>
 							<Row>
 								<Col xs={12} className='text-center'>
-									<Button type='submit' className='mt-3 px-5 mb-5' size='sm' variant='outline-primary'>
-										Show More
-									</Button>
+									<Link to='/safari-tour'>
+										<Button type='button' className='mt-3 px-5 mb-5' variant='outline-dark'>
+											Similar to {tour.title}
+										</Button>
+									</Link>
 								</Col>
 							</Row>
 						</Col>
@@ -322,9 +324,11 @@ export const TourPage = () => {
 							</Row>
 							<Row>
 								<Col xs={12} className='text-center'>
-									<Button type='submit' className='mt-3 px-5 mb-5' size='sm' variant='outline-primary'>
-										Show More
-									</Button>
+									<Link to='/safari-tour'>
+										<Button type='button' className='mt-3 px-5 mb-5' variant='outline-dark'>
+											Similar to {tour.safari_types[0].title}
+										</Button>
+									</Link>
 								</Col>
 							</Row>
 						</Col>

@@ -31,7 +31,7 @@ export const NewsletterForm = () => {
 				/>
 			</Form.Group>
 			<Form.Group controlId='formBasicEmail'>
-				<Button variant='primary' type='submit'>
+				<Button variant='info' type='submit'>
 					Subscribe Now
 				</Button>
 			</Form.Group>
