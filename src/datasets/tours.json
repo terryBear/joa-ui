@@ -4,7 +4,7 @@
         "slug": "kruger-explorer",
         "title": "Kruger Explorer",
         "short_description": "A luxurious and immersive safari adventure.",
-        "long_description": "An unforgettable journey through Africa's finest landscapes.",
+        "long_description": "Step into the heart of Sabi Sands Game Reserve, a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities. This 6-day exclusive photographic safari is crafted for photographers seeking the ultimate predator encounters. It features specialized low-angle safari vehicles, off-road tracking, and expert coaching to capture striking, close-up wildlife portraits.From the legendary MalaMala, where leopards are seen almost daily, to the pristine landscapes of Ulusaba, where golden-hour lion hunts unfold before your lens, every moment is designed to elevate your wildlife storytelling and technical photography skills.",
         "featured_image": "/images/elephant-loxodonta-africana-mana-pools-zimbabw-2025-04-04-16-18-33-utc.jpg",
         "images": [
             "/images/elephant-at-zambezi-national-park-in-zimbabwe-2025-02-09-22-22-13-utc.jpg",
@@ -39,6 +39,92 @@
             {
                 "day": "Day 5",
                 "description": "Exciting activities for day 5"
+            }
+        ],
+        "itinerary_summary": [
+            {
+                "label": "Day 1 - 3",
+                "title": "Arrive in Nairobi",
+                "description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury.",
+                "location": "Serengeti National Park",
+                "coordinates": [
+                    34.7003479,
+                    -2.382955
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 3 - 4",
+                "title": "Ngorongoro Crater",
+                "description": "Explore the breathtaking landscapes of Ngorongoro Crater. This UNESCO World Heritage Site is home to a diverse range of wildlife and stunning scenery.",
+                "location": "Ngorongoro Crater",
+                "coordinates": [
+                    35.4966634,
+                    -3.1762155
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Explore the breathtaking landscapes of Ngorongoro Crater. This UNESCO World Heritage Site is home to a diverse range of wildlife and stunning scenery. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 4 - 7",
+                "title": "Sabi Sands Game Reserve",
+                "description": "Sabi Sands Game Reserve is a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities.",
+                "location": "Sabi Sands",
+                "coordinates": [
+                    31.524910,
+                    -24.927938
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Sabi Sands Game Reserve is a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 7 - 11",
+                "title": "End your adventure in Cape Town",
+                "description": "End your adventure in the heart of the Cape Town. This vibrant city is known for its stunning landscapes, rich history, and diverse culture.",
+                "location": "Cape Town",
+                "coordinates": [
+                    18.424055,
+                    -33.924870
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "End your adventure in the heart of the Cape Town. This vibrant city is known for its stunning landscapes, rich history, and diverse culture. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
             }
         ],
         "inclusions": [
@@ -122,8 +208,18 @@
             "Eco-Friendly"
         ],
         "transportation": [
-            "Boat",
-            "Car"
+            {
+                "title": "Activities",
+                "description": "All entrances, activities and safari drives are included"
+            },
+            {
+                "title": "Tour Guide",
+                "description": "This package includes a private tour guide in Cape Town"
+            },
+            {
+                "title": "Transfers",
+                "description": "Private Transfers, domestic flights, and regional flights"
+            }
         ],
         "comfort_level": [
             "Luxury",
@@ -143,8 +239,16 @@
         ],
         "features": [
             {
-                "title": "Customizable Itinerary",
-                "description": "Tailor your trip"
+                "title": "Activities",
+                "description": "All entrances, activities and safari drives are included"
+            },
+            {
+                "title": "Tour Guide",
+                "description": "This package includes a private tour guide in Cape Town"
+            },
+            {
+                "title": "Transfers",
+                "description": "Private Transfers, domestic flights, and regional flights"
             }
         ],
         "highlights": [
@@ -153,14 +257,21 @@
                 "description": "End your day with a golden view",
                 "image": "https://example.com/image2.jpg"
             }
-        ]
+        ],
+        "reviews": [
+            {
+                "title": "Great Experience",
+                "description": "The safari was amazing! The guides were knowledgeable and the wildlife was breathtaking. Highly recommend!"
+            }
+        ],
+        "rating": 4.8
     },
     {
         "id": 2,
         "slug": "serengeti-adventure",
         "title": "Serengeti Adventure",
         "short_description": "Perfect for wildlife enthusiasts and nature lovers.",
-        "long_description": "A luxurious and immersive safari adventure.",
+        "long_description": "A luxurious and immersive safari adventure. Step into the heart of Sabi Sands Game Reserve, a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities. This 6-day exclusive photographic safari is crafted for photographers seeking the ultimate predator encounters. It features specialized low-angle safari vehicles, off-road tracking, and expert coaching to capture striking, close-up wildlife portraits.From the legendary MalaMala, where leopards are seen almost daily, to the pristine landscapes of Ulusaba, where golden-hour lion hunts unfold before your lens, every moment is designed to elevate your wildlife storytelling and technical photography skills.",
         "featured_image": "/images/okavango-delta-botswana-2025-03-18-14-51-48-utc.jpg",
         "images": [
             "/images/okavango-delta-botswana-2025-03-18-14-51-36-utc.jpg",
@@ -178,23 +289,114 @@
         "itinerary": [
             {
                 "day": "Day 1",
-                "description": "Exciting activities for day 1"
+                "description": "Exciting activities for day 1",
+                "long_description": "A luxurious and immersive safari adventure. Step into the heart of Sabi Sands Game Reserve, a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities. This 6-day exclusive photographic safari is crafted for photographers seeking the ultimate predator encounters. It features specialized low-angle safari vehicles, off-road tracking, and expert coaching to capture striking, close-up wildlife portraits.From the legendary MalaMala, where leopards are seen almost daily, to the pristine landscapes of Ulusaba, where golden-hour lion hunts unfold before your lens, every moment is designed to elevate your wildlife storytelling and technical photography skills."
             },
             {
                 "day": "Day 2",
-                "description": "Exciting activities for day 2"
+                "description": "Exciting activities for day 2",
+                "long_description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
             },
             {
                 "day": "Day 3",
-                "description": "Exciting activities for day 3"
+                "description": "Exciting activities for day 3",
+                "long_description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
             },
             {
                 "day": "Day 4",
-                "description": "Exciting activities for day 4"
+                "description": "Exciting activities for day 4",
+                "long_description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
             },
             {
                 "day": "Day 5",
-                "description": "Exciting activities for day 5"
+                "description": "Exciting activities for day 5",
+                "long_description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            }
+        ],
+        "itinerary_summary": [
+            {
+                "label": "Day 1 - 3",
+                "title": "Arrive in Nairobi",
+                "description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury.",
+                "location": "Serengeti National Park",
+                "coordinates": [
+                    34.7003479,
+                    -2.382955
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 3 - 4",
+                "title": "Ngorongoro Crater",
+                "description": "Explore the breathtaking landscapes of Ngorongoro Crater. This UNESCO World Heritage Site is home to a diverse range of wildlife and stunning scenery.",
+                "location": "Ngorongoro Crater",
+                "coordinates": [
+                    35.4966634,
+                    -3.1762155
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Explore the breathtaking landscapes of Ngorongoro Crater. This UNESCO World Heritage Site is home to a diverse range of wildlife and stunning scenery. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 4 - 7",
+                "title": "Sabi Sands Game Reserve",
+                "description": "Sabi Sands Game Reserve is a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities.",
+                "location": "Sabi Sands",
+                "coordinates": [
+                    31.524910,
+                    -24.927938
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Sabi Sands Game Reserve is a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 7 - 11",
+                "title": "End your adventure in Cape Town",
+                "description": "End your adventure in the heart of the Cape Town. This vibrant city is known for its stunning landscapes, rich history, and diverse culture.",
+                "location": "Cape Town",
+                "coordinates": [
+                    18.424055,
+                    -33.924870
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "End your adventure in the heart of the Cape Town. This vibrant city is known for its stunning landscapes, rich history, and diverse culture. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
             }
         ],
         "inclusions": [
@@ -266,8 +468,18 @@
             "Eco-Friendly"
         ],
         "transportation": [
-            "Plane",
-            "Car"
+            {
+                "title": "Activities",
+                "description": "All entrances, activities and safari drives are included"
+            },
+            {
+                "title": "Tour Guide",
+                "description": "This package includes a private tour guide in Cape Town"
+            },
+            {
+                "title": "Transfers",
+                "description": "Private Transfers, domestic flights, and regional flights"
+            }
         ],
         "comfort_level": [
             "Standard",
@@ -287,8 +499,16 @@
         ],
         "features": [
             {
-                "title": "Customizable Itinerary",
-                "description": "Tailor your trip"
+                "title": "Activities",
+                "description": "All entrances, activities and safari drives are included"
+            },
+            {
+                "title": "Tour Guide",
+                "description": "This package includes a private tour guide in Cape Town"
+            },
+            {
+                "title": "Transfers",
+                "description": "Private Transfers, domestic flights, and regional flights"
             }
         ],
         "highlights": [
@@ -297,14 +517,21 @@
                 "description": "End your day with a golden view",
                 "image": "https://example.com/image1.jpg"
             }
-        ]
+        ],
+        "reviews": [
+            {
+                "title": "Great Experience",
+                "description": "The safari was amazing! The guides were knowledgeable and the wildlife was breathtaking. Highly recommend!"
+            }
+        ],
+        "rating": 4.2
     },
     {
         "id": 3,
         "title": "Masai Mara Safari",
         "slug": "masai-mara-safari",
         "short_description": "A thrilling adventure in the heart of Africa.",
-        "long_description": "Experience the wild like never before.",
+        "long_description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury.",
         "featured_image": "/images/elephant-at-zambezi-national-park-in-zimbabwe-2025-02-09-22-22-13-utc.jpg",
         "images": [
             "/images/elephant-loxodonta-africana-mana-pools-zimbabw-2025-04-04-16-18-33-utc.jpg",
@@ -341,31 +568,129 @@
                 "description": "Exciting activities for day 5"
             }
         ],
+        "itinerary_summary": [
+            {
+                "label": "Day 1 - 3",
+                "title": "Arrive in Nairobi",
+                "description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury.",
+                "location": "Serengeti National Park",
+                "coordinates": [
+                    34.7003479,
+                    -2.382955
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 3 - 4",
+                "title": "Ngorongoro Crater",
+                "description": "Explore the breathtaking landscapes of Ngorongoro Crater. This UNESCO World Heritage Site is home to a diverse range of wildlife and stunning scenery.",
+                "location": "Ngorongoro Crater",
+                "coordinates": [
+                    35.4966634,
+                    -3.1762155
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Explore the breathtaking landscapes of Ngorongoro Crater. This UNESCO World Heritage Site is home to a diverse range of wildlife and stunning scenery. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 4 - 7",
+                "title": "Sabi Sands Game Reserve",
+                "description": "Sabi Sands Game Reserve is a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities.",
+                "location": "Sabi Sands",
+                "coordinates": [
+                    31.524910,
+                    -24.927938
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "Sabi Sands Game Reserve is a world-renowned private wilderness offering unmatched leopard and big cat photography opportunities. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            },
+            {
+                "label": "Day 7 - 11",
+                "title": "End your adventure in Cape Town",
+                "description": "End your adventure in the heart of the Cape Town. This vibrant city is known for its stunning landscapes, rich history, and diverse culture.",
+                "location": "Cape Town",
+                "coordinates": [
+                    18.424055,
+                    -33.924870
+                ],
+                "accomodation": [
+                    "Tent",
+                    "Apartment",
+                    "Villa"
+                ],
+                "meals": [
+                    "Dinner",
+                    "Brunch",
+                    "Snack"
+                ],
+                "long_description": "End your adventure in the heart of the Cape Town. This vibrant city is known for its stunning landscapes, rich history, and diverse culture. Experience the wild like never before. Join us for a thrilling adventure in the heart of Africa. Our Masai Mara Safari offers an unforgettable experience, where you can witness the majestic wildlife in their natural habitat. From the iconic Big Five to the breathtaking landscapes, this safari is designed for those who seek adventure and luxury."
+            }
+        ],
         "inclusions": [
             {
                 "title": "Park Fees",
                 "description": "All park fees included"
+            },
+            {
+                "title": "Meals",
+                "description": "All meals included"
+            },
+            {
+                "title": "Accommodation",
+                "description": "Luxury accommodation included"
             }
         ],
         "exclusions": [
             {
-                "title": "",
-                "description": ""
+                "title": "Flights",
+                "description": "International flights not included"
+            },
+            {
+                "title": "Travel Insurance",
+                "description": "Travel insurance not included"
             }
         ],
-        "destination": "",
+        "destination": "Kenya",
         "african_safari_experiences": [
             {
                 "title": "Game Drive",
                 "description": "Spot the Big Five",
-                "image": "https://example.com/image4.jpg"
+                "image": "https://example.com/image2.jpg"
             }
         ],
         "safari_types": [
             {
                 "title": "Photographic Safari",
                 "description": "Capture stunning moments",
-                "image": "https://example.com/image4.jpg"
+                "image": "https://example.com/image2.jpg"
             }
         ],
         "accomodation": [
@@ -377,9 +702,9 @@
             {
                 "title": "Savannah Lodge",
                 "description": "Luxury in the wild",
-                "image": "https://example.com/image4.jpg",
+                "image": "https://example.com/image3.jpg",
                 "coordinates": "-1.9577, 37.2972",
-                "location": "Kenya",
+                "location": "Botswana",
                 "type": "Lodge"
             },
             {
@@ -387,7 +712,7 @@
                 "description": "Luxury in the wild",
                 "image": "https://example.com/image4.jpg",
                 "coordinates": "-1.9577, 37.2972",
-                "location": "Botswana",
+                "location": "Kenya",
                 "type": "Lodge"
             }
         ],
@@ -410,8 +735,62 @@
             "Eco-Friendly"
         ],
         "transportation": [
-            "Boat",
-            "Car"
-        ]
+            {
+                "title": "Activities",
+                "description": "All entrances, activities and safari drives are included"
+            },
+            {
+                "title": "Tour Guide",
+                "description": "This package includes a private tour guide in Cape Town"
+            },
+            {
+                "title": "Transfers",
+                "description": "Private Transfers, domestic flights, and regional flights"
+            }
+        ],
+        "comfort_level": [
+            "Luxury",
+            "Basic"
+        ],
+        "duration": [
+            "14 Days"
+        ],
+        "map": [
+            {
+                "coordinates": [
+                    "-1.9577",
+                    "37.2972"
+                ],
+                "location": "Botswana"
+            }
+        ],
+        "features": [
+            {
+                "title": "Activities",
+                "description": "All entrances, activities and safari drives are included"
+            },
+            {
+                "title": "Tour Guide",
+                "description": "This package includes a private tour guide in Cape Town"
+            },
+            {
+                "title": "Transfers",
+                "description": "Private Transfers, domestic flights, and regional flights"
+            }
+        ],
+        "highlights": [
+            {
+                "title": "Sunset Safari",
+                "description": "End your day with a golden view",
+                "image": "https://example.com/image2.jpg"
+            }
+        ],
+        "reviews": [
+            {
+                "title": "Great Experience",
+                "description": "The safari was amazing! The guides were knowledgeable and the wildlife was breathtaking. Highly recommend!"
+            }
+        ],
+        "rating": 1
     }
 ]

@@ -3,14 +3,12 @@ import { Link } from 'react-router'
 
 export const CtaBanner = () => {
 	return (
-		<aside
-			className='banner'
-			style={{
-				backgroundImage: `url("/images/wild-animals-botswana-africa-2025-03-18-15-02-07-utc.jpg")`,
-				backgroundSize: 'cover',
-				backgroundPosition: 'center',
-				backgroundRepeat: 'no-repeat',
-			}}>
+		<aside className='banner'>
+			<img
+				alt={'Request Luxurious African Safari Tour Quote'}
+				src={'/images/wild-animals-botswana-africa-2025-03-18-15-02-07-utc.jpg'}
+				className='banner__image'
+			/>
 			<div className='banner__content'>
 				<h2>Request Luxurious African Safari Tour Quote</h2>
 				<p>Customize my African Safari</p>

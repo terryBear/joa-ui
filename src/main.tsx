@@ -1,18 +1,15 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./scss/global.scss";
-import { PrimeReactProvider } from "primereact/api";
-import { SafariProvider } from "./Providers/SafariProvider.tsx";
-import { SafariRouter } from "./Providers/RouteProvider.tsx";
-import { App } from "./App.tsx";
+import { PrimeReactProvider } from 'primereact/api'
+import { createRoot } from 'react-dom/client'
+import { App } from './App.tsx'
+import { SafariRouter } from './Providers/RouteProvider.tsx'
+import { SafariProvider } from './Providers/SafariProvider.tsx'
+import './scss/global.scss'
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <PrimeReactProvider>
-      <SafariProvider>
-        <SafariRouter />
-        <App />
-      </SafariProvider>
-    </PrimeReactProvider>
-  </StrictMode>
-);
+createRoot(document.getElementById('root')!).render(
+	<PrimeReactProvider>
+		<SafariProvider>
+			<SafariRouter />
+			<App />
+		</SafariProvider>
+	</PrimeReactProvider>
+)

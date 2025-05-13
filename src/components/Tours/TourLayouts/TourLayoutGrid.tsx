@@ -10,9 +10,11 @@ import { TourCard } from '../TourCard/TourCard'
 
 export interface TourLayoutGridProps {
 	items?: number
+	args?: any
 }
 
-export const TourLayoutGrid = () => {
+// @ts-ignore
+export const TourLayoutGrid = ({ args = {} }) => {
 	// @ts-ignore
 	const [tours, setTours] = useState()
 	return (
@@ -35,7 +37,7 @@ export const TourLayoutGrid = () => {
 				<Col xs={12} md={8} lg={9} className='mb-4'>
 					<Row>
 						{DummyTours.map((tour, index) => (
-							<Col xs={12} md={4} className='mb-4' key={index}>
+							<Col xs={12} md={6} className='mb-4' key={index}>
 								<TourCard
 									handleClick={(tour) => {
 										console.log(tour)

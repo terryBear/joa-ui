@@ -28,17 +28,17 @@ export const FilterCard = ({ filters }: FilterCardProps) => {
 	const [filterQuery, setFilterQueries] = useState<FilterSortOptions>(defaultFilters)
 
 	return (
-		<Card>
+		<Card className='border-1'>
 			<Card.Body>
-				<h5>Refine your safari</h5>
+				<h4>Refine your safari</h4>
 				<Card.Text>
 					<Form>
 						{filters.map((filter: FilterOptions) => {
 							if (filter.component === 'select') {
 								return (
 									<div key={filter.key}>
-										<p className='mb-2 mt-4 font-family-button text-uppercase fw-bolder'>
-											<small>{filter.title}</small>
+										<p className='mb-2 mt-4  text-uppercase '>
+											<strong>{filter.title}</strong>
 										</p>
 										<Form.Select aria-label='Default select example'>
 											<option>{filter.value.join(', ')}</option>
@@ -54,8 +54,8 @@ export const FilterCard = ({ filters }: FilterCardProps) => {
 							} else if (filter.component === 'range') {
 								return (
 									<div key={filter.key}>
-										<p className='mb-2 mt-4 font-family-button text-uppercase fw-bolder'>
-											<small>{filter.title}</small>
+										<p className='mb-2 mt-4  text-uppercase '>
+											<strong>{filter.title}</strong>
 										</p>
 										<Form.Range />
 										<Divider />
@@ -64,8 +64,8 @@ export const FilterCard = ({ filters }: FilterCardProps) => {
 							} else {
 								return (
 									<div key={filter.key}>
-										<p className='mb-2 mt-4 font-family-button text-uppercase fw-bolder'>
-											<small>{filter.title}</small>
+										<p className='mb-2 mt-4  text-uppercase '>
+											<strong>{filter.title}</strong>
 										</p>
 
 										{filter.value.map((option, index) => (

@@ -11,7 +11,7 @@ export const Experiences = () => {
 				hero={true}
 				title="Experience Luxury Safari Escapes Across Africa's Iconic Landscapes"
 				description='Tailor your safari bucket-list from top-rated travel opportunities.'
-				image='/business/hero/banner-hero-1.jpeg'
+				image='/images/a-hippopotamus-swimming-with-just-head-and-ears-ab-2025-04-03-23-08-22-utc.jpg'
 			/>
 			<TourLayoutGrid />
 			<CtaBanner />

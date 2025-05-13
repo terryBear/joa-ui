@@ -16,14 +16,12 @@ export const Banner: FC<BannerProps> = ({
 	image = null,
 	hero = false,
 }) => {
-	const style = {
-		backgroundImage: `url(${image})`,
-	}
 	return (
-		<aside className={`banner ${hero && 'hero'}`} style={image ? style : {}}>
+		<aside className={`banner ${hero && 'hero'}`}>
+			{image && <img alt={title} src={image} className='banner__image' />}
 			<div className='banner__content'>
 				<Container>
-					<h1>{title}</h1>
+					<h1 className='text-capitalize '>{title}</h1>
 					<p>{description}</p>
 					{button && <div className='banner__button'>{button}</div>}
 				</Container>

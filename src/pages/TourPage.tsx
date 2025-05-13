@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Calendar } from 'primereact/calendar'
+import { Chip } from 'primereact/chip'
 import { Dropdown } from 'primereact/dropdown'
 import { useEffect, useState } from 'react'
-import { Accordion, Button, Col, Container, Row, Tab, Tabs } from 'react-bootstrap'
+import { Button, Col, Container, Row, Tab, Tabs } from 'react-bootstrap'
 import { Link, NavLink, useLocation, useParams } from 'react-router'
+import { CheckCircle, MinusIcon, PlusIcon } from '../components/Icons/Icons'
 import { MapElement } from '../components/Map/Map'
 import { PageDetailCarousel } from '../components/Page/PageDetail/components/PageDetailCarousel'
 import { TourCard } from '../components/Tours/TourCard/TourCard'
@@ -11,12 +13,13 @@ import { CAROUSEL } from '../constants/carousel'
 import TOURS from '../datasets/tours.json'
 import { useToursService } from '../hooks/useTours.service'
 import { MainAppLayout } from '../layout/Layout'
-import { AccomodationType, Features, Highlights, Tour } from '../types/tours'
+import { ItinerarySummary, Tour, Transportation } from '../types/tours'
+import { Divider } from '../ui-library/Divider'
 import { formatCurrency } from '../utils'
 
 export const TourPage = () => {
 	const { pathname } = useLocation()
-	const links = pathname.split('/')
+	const [links] = useState<string[]>(pathname.split('/'))
 	const { slug } = useParams<{ slug: string }>()
 	const { getBySlug } = useToursService()
 	const [tour, setTour] = useState<Tour | null>(null)
@@ -59,8 +62,12 @@ export const TourPage = () => {
 						</span>
 					) : (
 						<span className='text-capitalize' key={index}>
-							<NavLink to={`/${link}`} className={({ isActive }) => (isActive ? 'active' : '')}>
-								{link.split('-').join(' ')}
+							<NavLink
+								to={`/${
+									link === 'destination' ? 'destinations/' + tour?.destination.split(' ').join('-').toLowerCase() : link
+								}`}
+								className={({ isActive }) => (isActive ? 'active' : '')}>
+								{index > 0 ? tour?.destination : link}
 							</NavLink>
 							<span key={index}>{index < links.length - 1 && ' > '}</span>
 						</span>
@@ -77,7 +84,6 @@ export const TourPage = () => {
 						<Col xs={12}>
 							<Breadcrumb />
 							<h1 className='mt-3'>{tour?.title}</h1>
-							<p className='mt-0 mb-4'>{tour?.short_description}</p>
 						</Col>
 
 						<Col xs={12} md={8} lg={9} className=''>
@@ -85,10 +91,12 @@ export const TourPage = () => {
 						</Col>
 						<Col xs={12} md={4} lg={3} className=''>
 							<div className='card p-4 border-1 mb-3 '>
-								<p className='m-0 text-uppercase fw-bold'>
-									<small>from</small>
+								<p className='m-0 text-uppercase fw-bolder'>
+									<strong>
+										<small>from</small>
+									</strong>
 								</p>
-								<h3 className='number-font fw-bolder m-0 text-primary'>
+								<h3 className='number-font fw-bolder m-0 text-success'>
 									{formatCurrency(tour?.rates[0]?.amount, tour?.rates[0]?.currency)}
 								</h3>
 								<p className='m-0 '>
@@ -167,15 +175,11 @@ export const TourPage = () => {
 									</Button>
 								</div>
 								<p className='mb-1 small'>
-									<i className='bi bi-check-circle text-primary me-3'></i>
-									<i>Best Price Guarantee</i>
+									<CheckCircle className='text-info me-2' />
+									<i>Obligation Free Quote</i>
 								</p>
 								<p className='mb-1 small'>
-									<i className='bi bi-check-circle text-primary me-3'></i>
-									<i>Best Price Guarantee</i>
-								</p>
-								<p className='mb-0 small'>
-									<i className='bi bi-check-circle text-primary me-3'></i>
+									<CheckCircle className='text-info me-2' />
 									<i>Best Price Guarantee</i>
 								</p>
 							</div>
@@ -184,99 +188,193 @@ export const TourPage = () => {
 							<div className='page-detail-tabs'>
 								<Tabs defaultActiveKey='overview' id='destinations-tabs' className='my-3' fill>
 									<Tab eventKey='overview' title='overview' key='overview'>
-										<h2>Safari Overview</h2>
 										<p>{tour.long_description}</p>
+										<Divider margin='2em 0' />
 										<Row className='mb-5'>
 											<Col xs={12} md={6} className='mb-4'>
 												<h5 className='mt-4'>Route:</h5>
-												<MapElement />
+												<MapElement tour={tour} renderTourMap={true} />
 											</Col>
 											<Col xs={12} md={6} className='mb-4'>
 												<h5 className='mt-4'>Description:</h5>
-												<p>Map</p>
+												<p>
+													<strong>Start: {tour?.itinerary_summary[0].location}</strong>
+												</p>
+												{tour?.itinerary_summary?.map((safari: ItinerarySummary) => (
+													<div key={`safari-${safari.label}`}>
+														<p>
+															<strong>{safari.label}: </strong>
+															{safari.description}
+														</p>
+														<Chip
+															label={safari.meals.join(',')}
+															image='/icons/Meals Icon.png'
+															className='me-3'
+														/>
+														<Chip
+															label={safari.accomodation.join(', ')}
+															image='/icons/Accommodation Icon.png'
+														/>
+														<Divider />
+													</div>
+												))}
+												<p>
+													<strong>
+														End: {tour?.itinerary_summary[tour?.itinerary_summary.length - 1].location}
+													</strong>
+												</p>
 											</Col>
 										</Row>
-										<h5 className='mt-4 mb-4'>Tour Features:</h5>
+										<Divider margin='2em 0' />
+										<h5 className='mt-4 mb-4'>Activities & Transportation:</h5>
 										<Row>
-											{tour?.features?.map((features: Features) => (
-												<Col xs={12} md={6} className='mb-4' key={`highlights-${features.title}`}>
+											{tour?.transportation?.map((features: Transportation, index: number) => (
+												<Col xs={12} md={12} className='mb-4' key={`highlights-${features.title}`}>
 													<div className='d-flex align-items-center'>
-														<i className='bi bi-check-circle text-primary me-3'></i>
+														{index === 0 && <img src='/icons/Binoculars.png' className='icon-image me-3' />}
+														{index === 1 && (
+															<img src='/icons/Tour Guide Icon.png' className='icon-image me-3' />
+														)}
+														{index === 2 && <img src='/icons/Transfers Icon.png' className='icon-image me-3' />}
 														<p className='m-0'>
-															<strong>{features.title}</strong>
-															<p className='m-0'>{features.description}</p>
+															<strong>{features.title}: </strong>
+															{features.description}
 														</p>
 													</div>
 												</Col>
 											))}
 										</Row>
-										<h5 className='mt-4 mb-4'>Highlights & Activities:</h5>
+										<Divider margin='2em 0' />
+										<h5 className='mt-4 mb-4'>Tour Features</h5>
 										<Row>
-											{tour?.highlights?.map((highlight: Highlights) => (
-												<Col xs={12} md={6} className='mb-4' key={`highlights-${highlight.title}`}>
-													<div className='d-flex align-items-center'>
-														<i className='bi bi-check-circle text-primary me-3'></i>
-														<p className='m-0'>
-															<strong>{highlight.title}</strong>
-															<p className='m-0'>{highlight.description}</p>
-														</p>
-													</div>
-												</Col>
-											))}
+											<Col xs={12} md={6} className='mb-4'>
+												<div className='d-flex align-items-center'>
+													<img src='/icons/Tour Catagory Icon.png' className='icon-image me-3 mb-3' />
+												</div>
+												<p>
+													<strong>Tour Catagory: </strong>
+												</p>
+												<ul>
+													<li>{tour.exclusivity.join(', ')}</li>
+													<li>{tour.sustainability.join(', ')}</li>
+												</ul>
+											</Col>
+											<Col xs={12} md={6} className='mb-4'>
+												<div className='d-flex align-items-center'>
+													<img src='/icons/Customization Icon.png' className='icon-image me-3 mb-3' />
+												</div>
+												<p>
+													<strong>Customization: </strong>
+												</p>
+												<p className='m-0'>This safari can be customized to suite your needs</p>
+											</Col>
+											<Col xs={12} md={6} className='mb-4'>
+												<div className='d-flex align-items-center'>
+													<img src='/icons/Private Tour Icon.png' className='icon-image me-3 mb-3' />
+												</div>
+												<p>
+													<strong>Private Tour: </strong>
+												</p>
+												<p className='m-0'>
+													This safari is exclusively yours. However, Safari drives are shared, unless you book a
+													private safari vehicle
+												</p>
+											</Col>
+											<Col xs={12} md={6} className='mb-4'>
+												<div className='d-flex align-items-center'>
+													<img src='/icons/Start Date Icon.png' className='icon-image me-3 mb-3' />
+												</div>
+												<p>
+													<strong>Start Date: </strong>
+												</p>
+												<p className='m-0'>This safari can start on any day</p>
+											</Col>
 										</Row>
-										<h5 className='mt-4 mb-3'>Accommodation & Meals:</h5>
-										<Row>
-											{tour?.accomodation?.map((accomodation: AccomodationType) => (
-												<Col xs={12} md={6} className='mb-4' key={`highlights-${accomodation}`}>
-													<div className='d-flex align-items-center'>
-														<i className='bi bi-check-circle text-primary me-3'></i>
-														<p className='m-0'>
-															<strong>{accomodation}</strong>
-														</p>
-													</div>
-												</Col>
-											))}
-										</Row>
+										<Divider margin='2em 0' />
 									</Tab>
 									<Tab eventKey='itinerary' title='Day by Day' key='itinerary'>
-										<h2>Day by Day</h2>
-										<Accordion defaultActiveKey='0'>
-											{tour?.itinerary?.map((day, index) => (
-												<Accordion.Item eventKey={index.toString()} key={`itinerary-${day.day}`}>
-													<Accordion.Header>
-														<h5 className='m-0'>{day.day}</h5>
-													</Accordion.Header>
-													<Accordion.Body>
-														<p>{day.description}</p>
-													</Accordion.Body>
-												</Accordion.Item>
-											))}
-										</Accordion>
+										{tour?.itinerary_summary?.map((safari: ItinerarySummary) => (
+											<div key={`safari-${safari.label}`} className='mt-5'>
+												<h5>
+													{safari.label}: {safari.title}
+												</h5>
+												<p>{safari.long_description}</p>
+												<p>
+													{safari.meals.map((meal) => (
+														<Chip label={meal} image='/icons/Meals Icon.png' className='me-3' />
+													))}
+												</p>
+												<p>
+													{safari.accomodation.map((accomodation) => (
+														<Chip label={accomodation} image='/icons/Accommodation Icon.png' className='me-3' />
+													))}
+												</p>
+
+												<Divider />
+											</div>
+										))}
 									</Tab>
 									<Tab eventKey='inclusions' title='inclusions' key='inclusions'>
 										<Row>
-											<Col xs={12} md={6} className='mb-4'>
-												<h5 className='mt-4 mb-3'>What's included?</h5>
+											<Col xs={12} md={6} className='mb-4 border-right-divider'>
+												<h5 className='mt-4 mb-3'>
+													<PlusIcon className='me-2 text-success' />
+													Included?
+												</h5>
 												{tour?.inclusions?.map((item, index) => (
 													<div key={index}>
-														<h6 className='font-family-button mt-4'>{item.title}</h6>
-														<p>{item.description}</p>
+														<p>
+															<strong>{item.title}: </strong>
+															{item.description}
+														</p>
 													</div>
 												))}
 											</Col>
 											<Col xs={12} md={6} className='mb-4'>
-												<h5 className='mt-4 mb-3'>What's excluded?</h5>
+												<h5 className='mt-4 mb-3'>
+													<MinusIcon className='me-2 text-danger' />
+													Excluded?
+												</h5>
 												{tour?.exclusions?.map((item, index) => (
 													<div key={index}>
-														<h6 className='font-family-button mt-4'>{item.title}</h6>
-														<p>{item.description}</p>
+														<p>
+															<strong>{item.title}: </strong>
+															{item.description}
+														</p>
 													</div>
 												))}
 											</Col>
 										</Row>
 									</Tab>
 									<Tab eventKey='rates' title='rates' key='rates'>
-										<h2>Important to know</h2>
+										<h5>Important Aspects to Consider:</h5>
+										<ul>
+											<li>Rates are per person and exclude the international flight from/to your home country.</li>
+											<li>This tour is not available to groups larger than 4 people.</li>
+											<li>
+												This tour is offered in US dollars (USD). The ZAR rates shown are converted for information
+												purposes only. How do I pay in USD?
+											</li>
+											<li>This tour accepts children who are 12 years and older. </li>
+											<li>
+												Rates include a fixed budget for flights during this tour. Flights may cost more, depending
+												on travel dates. If so, your quote will reflect this.
+											</li>
+										</ul>
+										<Divider margin='2em 0' />
+										<h5>Price Per Person:</h5>
+										<table className='rate-table'>
+											<tbody>
+												{tour?.rates?.map((rate) => (
+													<tr key={`rate-${rate.year}`}>
+														<td>
+															<strong>Jan 1 - Dec 31 {rate.year}</strong>
+														</td>
+														<td>From USD {formatCurrency(rate.amount, rate.currency)} per person sharing</td>
+													</tr>
+												))}
+											</tbody>
+										</table>
 									</Tab>
 								</Tabs>
 							</div>
@@ -309,8 +407,8 @@ export const TourPage = () => {
 						<Col xs={12} className=''>
 							<h3 className='mt-5 text-center mb-4'>Similar to {tour.safari_types[0].title}</h3>
 							<Row>
-								{TOURS.map((__tour) => (
-									<Col xs={12} md={4} className='mb-4' key={`index-similar-${tour.slug}`}>
+								{TOURS.map((__tour, _index) => (
+									<Col xs={12} md={4} className='mb-4' key={`index-similar-${_index}-${tour.slug}`}>
 										<TourCard
 											handleClick={(__tour) => {
 												console.log(__tour)

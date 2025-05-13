@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-export const formatCurrency = (amount: number | unknown, currency: string, locale: string = 'en-US') => {
+export const formatCurrency = (amount: number | unknown, currency?: string, locale: string = 'en-US') => {
 	return new Intl.NumberFormat(locale, {
 		style: 'currency',
 		currency: currency,
+		minimumFractionDigits: 0,
+		maximumFractionDigits: 0,
 		// @ts-ignore
 	}).format(amount)
 }
@@ -49,4 +51,9 @@ export const formatDateTimeWithSecondsAndTimezone = (date: string, locale: strin
 		second: '2-digit',
 		timeZoneName: 'short',
 	}).format(new Date(date))
+}
+
+export const isDaytime = () => {
+	const currentHour = new Date().getHours()
+	return currentHour >= 6 && currentHour < 20
 }

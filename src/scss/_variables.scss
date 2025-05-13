@@ -49,9 +49,9 @@ $typography-heading-font-weight: 500;
 $typography-number-font-family: 'Space Grotesk';
 
 // NEW UI COLORS
-$primary: $ui-primary !default;
+$primary: $ui-dark !default;
 $secondary: $ui-secondary !default;
-$success: $green !default;
+$success: $ui-primary !default;
 $info: $ui-info !default;
 $warning: $yellow !default;
 $danger: $red !default;

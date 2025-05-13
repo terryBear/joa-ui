@@ -1,20 +1,39 @@
 .tour-card {
-	background-color: $body-secondary-color;
+	background-color: $ui-primary;
 	border-radius: 0.25rem;
 	margin-bottom: 0;
-	background-image: url('/images/zimbabwean-sunset-2025-01-29-07-27-48-utc.jpg');
+	position: relative;
+	z-index: 1;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 450px;
 	position: relative;
 	z-index: 1;
-	// filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
-	// -webkit-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
-	// -moz-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+	overflow: hidden;
+	border: 1px solid $ui-primary;
+
+	&:hover {
+		border: 1px solid $ui-primary;
+	}
+
+	.tour-card__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 2;
+		filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+		-webkit-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+		-moz-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+	}
 
 	.tour-card__overlay {
-		background-color: rgba(0, 0, 0, 0.5);
+		// background-color: rgba(0, 0, 0, 0.5);
 		border-radius: 0.5rem;
 		padding: 1rem;
 		display: flex;
@@ -32,37 +51,129 @@
 		right: 0;
 		bottom: 0;
 		z-index: 2;
+		overflow: hidden;
 	}
 
 	.tour-card__content {
 		position: relative;
 		z-index: 3;
-		padding: 1em;
-		color: $white;
+		padding: 0;
+		color: $ui-primary;
 		display: flex;
 		flex-direction: column;
 		align-items: baseline;
 		justify-content: space-between;
+		overflow: hidden;
 		height: 100%;
+
+		.tour-card__text {
+			background-color: $ui-light;
+			padding: 1em;
+			overflow: hidden;
+			height: 141px;
+			width: 100%;
+		}
+
 		.btn-link {
 			font-size: $font-size-md;
 			text-transform: none;
-			color: $white;
+			color: $ui-dark;
 			font-weight: 600;
 			letter-spacing: 0;
+			margin: 0;
 		}
 
 		.tour-detail {
-			font-size: $font-size-sm;
+			font-size: 14px;
+			color: $ui-dark;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			margin: 5px 0 !important;
+
+			svg {
+				width: 20px;
+				height: 20px;
+				color: $ui-secondary;
+			}
 		}
 
 		.tour-car-price {
 			position: absolute;
 			right: 20px;
 			top: 20px;
-			background-color: $ui-secondary;
+			background-color: $ui-dark;
 			padding: 10px 20px;
 			border-radius: 3px;
+			color: $white;
+			font-size: 16px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				right: -10px;
+				top: 2px;
+				width: 0;
+				height: 0;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+				border-left: 20px solid $ui-dark;
+			}
 		}
 	}
+}
+
+.destination-card {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	height: 60vh;
+	background-color: $body-secondary-color;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 2;
+		filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+		-webkit-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+		-moz-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
+	}
+	.destination-card__content {
+		position: relative;
+		z-index: 3;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.6);
+		color: $white;
+		padding: 2em;
+		> * {
+			width: 100%;
+			color: $white;
+		}
+	}
+}
+
+.icon-image {
+	width: 50px;
 }

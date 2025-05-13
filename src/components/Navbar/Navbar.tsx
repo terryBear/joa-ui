@@ -34,7 +34,7 @@ export const NavBar = () => {
 							className={({ isActive }: any) => {
 								return isActive ? 'active' : ''
 							}}
-							to='/destination'>
+							to='/destinations'>
 							Destinations
 						</Nav.Link>
 						<Nav.Link

@@ -8,6 +8,17 @@ export interface Rates {
 export interface Itinerary {
 	day: string
 	description: string
+	long_description: string
+}
+export interface ItinerarySummary {
+	label: string
+	title: string
+	description: string
+	location: string
+	coordinates: string
+	accomodation: string[]
+	meals: string[]
+	long_description: string
 }
 export interface Inclusions {
 	title: string
@@ -92,7 +103,7 @@ export type Sustainability =
 	| 'Waste Reduction'
 	| 'Water Conservation'
 	| 'Community Engagement'
-export type Transportation =
+export type TransportationType =
 	| 'Car'
 	| 'Bus'
 	| 'Train'
@@ -103,6 +114,12 @@ export type Transportation =
 	| 'Motorcycle'
 	| 'Helicopter'
 	| 'Hot Air Balloon'
+
+export interface Transportation {
+	title: string
+	description: string
+}
+
 export type ComfortLevel =
 	| 'Basic'
 	| 'Standard'
@@ -147,6 +164,11 @@ export interface Highlights {
 	description: string
 	image: string
 }
+export interface Reviews {
+	title: string
+	description: string
+	image?: string
+}
 
 export interface Tour {
 	title: string
@@ -157,6 +179,7 @@ export interface Tour {
 	images: string[]
 	rates: Rates[]
 	itinerary: Itinerary[]
+	itinerary_summary: ItinerarySummary[]
 	inclusions: Inclusions[]
 	exclusions: Exclusions[]
 	destination: string
@@ -174,6 +197,8 @@ export interface Tour {
 	map: Locations[]
 	features: Features[]
 	highlights: Highlights[]
+	rating?: number
+	reviews?: Reviews[]
 }
 
 export interface TourCardProps extends Tour {
