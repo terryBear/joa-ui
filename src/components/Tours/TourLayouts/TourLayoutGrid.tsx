@@ -84,68 +84,70 @@ export const TourLayoutGrid = ({ args = {} }) => {
 	}, [])
 
 	return (
-		<Container className='py-5'>
-			<Row>
-				<Col xs={12}>
-					<h3 className='text-center letter-spacing-0'>
-						Find over <strong className='text-secondary'>150</strong> Luxury African Safari Packages & Ideas
-					</h3>
-					<h6 className='mb-5 text-center'>Let your Safari Expert Customize Your Dream Africa Tour</h6>
-					<TitleDivider />
-				</Col>
-				<Col xs={12} className='mt-5 text-center mb-5'>
-					{presetFilters.map((filter, index) => (
-						<JoaChip
-							key={index}
-							label={filter.label}
-							value={filter.value}
-							config={filter.config}
-							onClick={(ev) => {
-								console.log(ev)
-								setActiveChip(filter.value)
-							}}
-							className={activeChip === filter.value ? 'active' : ''}
-						/>
-					))}
-				</Col>
-			</Row>
-			<Row>
-				<Col xs={12} md={4} lg={3} className='mb-4'>
-					<FilterCard
-						filters={FILTERS}
-						handleFilterChange={(event: any) => {
-							console.log(event)
-						}}
-						onSubmit={function (): void {
-							throw new Error('Function not implemented.')
-						}}
-						onReset={function (): void {
-							throw new Error('Function not implemented.')
-						}}
-					/>
-				</Col>
-				<Col xs={12} md={8} lg={9} className='mb-4'>
-					<Row>
-						{tours?.map((tour: Tour, index: number) => (
-							<Col xs={12} md={6} className='mb-4' key={index}>
-								<TourCard
-									handleClick={(tour: Tour) => {
-										console.log(tour)
-									}}
-									tour={tour}
-								/>
-							</Col>
+		<div className='bg-white'>
+			<Container className='py-5'>
+				<Row>
+					<Col xs={12}>
+						<h3 className='text-center letter-spacing-0'>
+							Find over <strong className='text-secondary'>150</strong> Luxury African Safari Packages & Ideas
+						</h3>
+						<h6 className='mb-5 text-center'>Let your Safari Expert Customize Your Dream Africa Tour</h6>
+						<TitleDivider />
+					</Col>
+					<Col xs={12} className='mt-5 text-center mb-5'>
+						{presetFilters.map((filter, index) => (
+							<JoaChip
+								key={index}
+								label={filter.label}
+								value={filter.value}
+								config={filter.config}
+								onClick={(ev) => {
+									console.log(ev)
+									setActiveChip(filter.value)
+								}}
+								className={activeChip === filter.value ? 'active' : ''}
+							/>
 						))}
-					</Row>
-					<Row>
-						<Col xs={12} className='text-left'>
-							<Button type='button' className='mt-3 px-5 w-100' variant='outline-dark'>
-								show more
-							</Button>
-						</Col>
-					</Row>
-				</Col>
-			</Row>
-		</Container>
+					</Col>
+				</Row>
+				<Row>
+					<Col xs={12} md={4} lg={3} className='mb-4'>
+						<FilterCard
+							filters={FILTERS}
+							handleFilterChange={(event: any) => {
+								console.log(event)
+							}}
+							onSubmit={function (): void {
+								throw new Error('Function not implemented.')
+							}}
+							onReset={function (): void {
+								throw new Error('Function not implemented.')
+							}}
+						/>
+					</Col>
+					<Col xs={12} md={8} lg={9} className='mb-4'>
+						<Row>
+							{tours?.map((tour: Tour, index: number) => (
+								<Col xs={12} md={6} className='mb-4' key={index}>
+									<TourCard
+										handleClick={(tour: Tour) => {
+											console.log(tour)
+										}}
+										tour={tour}
+									/>
+								</Col>
+							))}
+						</Row>
+						<Row>
+							<Col xs={12} className='text-left'>
+								<Button type='button' className='mt-3 px-5 w-100' variant='outline-dark'>
+									show more
+								</Button>
+							</Col>
+						</Row>
+					</Col>
+				</Row>
+			</Container>
+		</div>
 	)
 }

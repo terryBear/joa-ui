@@ -60,7 +60,7 @@ export const PageDetailTabs = () => {
 						</Row>
 
 						<div className='text-center'>
-							<Link to={`/destination/${destination.slug}`}>
+							<Link to={`/destinations/${destination.slug}`}>
 								<Button type='button' className='mt-3 px-5 mb-5' size='sm' variant='info'>
 									View {destination.title} tours
 								</Button>

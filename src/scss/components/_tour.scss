@@ -7,9 +7,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 450px;
-	position: relative;
-	z-index: 1;
+	height: $tour-card-height;
 	overflow: hidden;
 	border: 1px solid $ui-primary;
 
@@ -43,7 +41,7 @@
 	}
 	.tour-card__image {
 		width: 100%;
-		height: calc(100% - 141px) !important;
+		height: calc($tour-card-height - $tour-card-content-height) !important;
 		object-fit: cover;
 		position: absolute;
 		left: 0;
@@ -57,7 +55,7 @@
 	}
 
 	.tour-card__overlay {
-		// background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 1);
 		border-radius: 0.5rem;
 		padding: 1rem;
 		display: flex;
@@ -68,7 +66,7 @@
 		color: $white;
 		width: 100%;
 		height: 100%;
-		min-height: 450px;
+		min-height: calc($tour-card-height - $tour-card-content-height) !important;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -97,7 +95,7 @@
 			background-color: $ui-light;
 			padding: 1em;
 			overflow: hidden;
-			height: 141px;
+			height: $tour-card-content-height;
 			width: 100%;
 			text-decoration: none;
 
@@ -120,17 +118,7 @@
 		.tour-detail {
 			font-size: 14px;
 			color: $ui-dark;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			align-items: center;
 			margin: 0 !important;
-
-			svg {
-				width: 20px;
-				height: 20px;
-				color: $ui-secondary;
-			}
 		}
 	}
 }
@@ -147,7 +135,6 @@
 	align-items: center;
 	justify-content: center;
 	border-radius: 10px;
-	overflow: hidden;
 
 	img {
 		width: 100%;
@@ -166,7 +153,6 @@
 	.destination-card__content {
 		position: relative;
 		z-index: 3;
-		padding: 0;
 		width: 100%;
 		height: 100%;
 		display: flex;
@@ -184,10 +170,6 @@
 	}
 }
 
-.icon-image {
-	width: 50px;
-}
-
 .carousel-indicators [data-bs-target] {
 	width: 10px;
 	height: 10px;
@@ -197,4 +179,28 @@
 .carousel-indicators {
 	justify-content: flex-start !important;
 	margin-left: 20px !important;
+}
+
+.rating-float {
+	position: absolute;
+	right: 0;
+	bottom: $tour-card-content-height;
+	z-index: 999999999;
+	color: #ffff;
+	background: rgba(0, 0, 0, 0.4);
+	align-items: center;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+
+	span {
+		font-weight: 700;
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
+		color: $ui-secondary;
+	}
 }

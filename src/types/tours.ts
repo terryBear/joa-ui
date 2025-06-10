@@ -18,7 +18,7 @@ export interface ItinerarySummary {
 	location: string
 	coordinates: string
 	accomodation: string[]
-	meals: string[]
+	meals: string
 	long_description: string
 }
 export interface Inclusions {
@@ -180,7 +180,7 @@ export interface Tour {
 	images: any[]
 	rate: Rates[]
 	itinerary: Itinerary[]
-	itinerary_summary: ItinerarySummary[]
+	itinerary_summaries: ItinerarySummary[]
 	inclusions: Inclusions[]
 	exclusions: Exclusions[]
 	destination: any[]

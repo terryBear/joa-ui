@@ -30,7 +30,7 @@ export const TourCardCarousel = ({ size = 'md', interval = 4000, caption = false
 		<Carousel
 			className='page-detail-carousel tour-card__image'
 			style={{
-				borderRadius: '0.25rem',
+				borderRadius: '0',
 				overflow: 'hidden',
 				height: SIZES[`${size}`] ?? '300px',
 			}}

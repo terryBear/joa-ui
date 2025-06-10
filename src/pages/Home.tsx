@@ -146,18 +146,15 @@ export const Home = () => {
 							<ReadMore
 								size='sm'
 								content={
-									<>
-										<p>
-											A Luxury Safari offers tailored itineraries catering to each guest's preferences and interests.
-											Safari itineraries are customized to ensure every moment of the safari is meaningful and
-											memorable, whether it is a private game drive, a guided bush walk, or a helicopter ride over the
-											savannah. Guests participate in activities such as wildlife photography, hot air balloon
-											safaris, or cultural visits, all while receiving personalized service throughout their journey.
-											A Luxury African Safari stands out for its ability to seamlessly blend the excitement of
-											wildlife encounters with the indulgence of fine living, offering a truly exceptional way to
-											experience Africa's natural beauty.
-										</p>
-									</>
+									<p>
+										A Luxury Safari offers tailored itineraries catering to each guest's preferences and interests.
+										Safari itineraries are customized to ensure every moment of the safari is meaningful and memorable,
+										whether it is a private game drive, a guided bush walk, or a helicopter ride over the savannah.
+										Guests participate in activities such as wildlife photography, hot air balloon safaris, or cultural
+										visits, all while receiving personalized service throughout their journey. A Luxury African Safari
+										stands out for its ability to seamlessly blend the excitement of wildlife encounters with the
+										indulgence of fine living, offering a truly exceptional way to experience Africa's natural beauty.
+									</p>
 								}
 							/>
 						</Col>
@@ -186,17 +183,14 @@ export const Home = () => {
 							<ReadMore
 								size='sm'
 								content={
-									<>
-										<p>
-											Visitors are drawn to the area during the dry season from July to September. However, the
-											shoulder seasons, just before and after the peak dry season for couples seeking a more intimate
-											and quieter experience, provide an ideal balance of good weather and fewer tourists. The dry
-											season is recommended for the safety and ease of wildlife viewing for families with kids. Luxury
-											lodges even offer child-friendly activities and amenities. Check the lodge policies in advance,
-											but the cooler, dry season months are the most comfortable for humans and pets for families
-											traveling with pets.
-										</p>
-									</>
+									<p>
+										Visitors are drawn to the area during the dry season from July to September. However, the shoulder
+										seasons, just before and after the peak dry season for couples seeking a more intimate and quieter
+										experience, provide an ideal balance of good weather and fewer tourists. The dry season is
+										recommended for the safety and ease of wildlife viewing for families with kids. Luxury lodges even
+										offer child-friendly activities and amenities. Check the lodge policies in advance, but the cooler,
+										dry season months are the most comfortable for humans and pets for families traveling with pets.
+									</p>
 								}
 							/>
 						</Col>
@@ -231,16 +225,14 @@ export const Home = () => {
 							<ReadMore
 								size='sm'
 								content={
-									<>
-										<p>
-											Visitors on a Luxury Safari Tour are advised to take malaria prophylaxis when traveling to areas
-											where malaria is present during the rainy season when mosquitoes are more active. Consult a
-											healthcare provider before the trip for recommendations on the appropriate medication. Yellow
-											fever vaccinations are required or recommended for visitors traveling to tropical regions such
-											as East Africa. Ensuring these health precautions are taken helps make the experience safe and
-											enjoyable for all guests.
-										</p>
-									</>
+									<p>
+										Visitors on a Luxury Safari Tour are advised to take malaria prophylaxis when traveling to areas
+										where malaria is present during the rainy season when mosquitoes are more active. Consult a
+										healthcare provider before the trip for recommendations on the appropriate medication. Yellow fever
+										vaccinations are required or recommended for visitors traveling to tropical regions such as East
+										Africa. Ensuring these health precautions are taken helps make the experience safe and enjoyable for
+										all guests.
+									</p>
 								}
 							/>
 						</Col>

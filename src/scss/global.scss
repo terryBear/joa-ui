@@ -395,7 +395,15 @@ h6 {
 
 .icon-image {
 	width: 100%;
-	max-width: 150px;
+	max-width: 50px;
+
+	&.md {
+		max-width: 75px;
+	}
+
+	&.lg {
+		width: 150px;
+	}
 }
 
 .inline-icon-image {
@@ -406,5 +414,31 @@ h6 {
 	&.lg {
 		max-width: 40px;
 		margin-right: 10px;
+	}
+}
+
+.breadcrums-top-nav {
+	font-size: 12px;
+	margin-top: 30px;
+
+	a {
+		color: $ui-secondary;
+		text-decoration: none;
+		font-weight: 700;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.table-img-thumbnail {
+	max-width: 200px;
+}
+
+.safari-table {
+	th,
+	td {
+		padding: 0 20px !important;
+		vertical-align: middle !important;
 	}
 }

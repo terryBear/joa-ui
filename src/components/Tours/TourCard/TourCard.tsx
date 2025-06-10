@@ -5,7 +5,7 @@ import { Tooltip } from 'primereact/tooltip'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { Tour, TourCardProps } from '../../../types/tours'
-import { formatCurrency } from '../../../utils'
+import { formatCurrency, formatNumber, getRandomArbitrary } from '../../../utils'
 import { StarIconFilled, StarIconOutline } from '../../Icons/Icons'
 import { TourCardCarousel } from './TourCardCarousel'
 
@@ -30,6 +30,36 @@ export const TourCard = ({ handleClick = () => {}, tour = {} as Tour }: TourCard
 					from {formatCurrency(tour?.rate?.[0]?.amount, 'USD')}
 				</span>
 			</div>
+			<p className='rating-float'>
+				{tourData?.reviews && tourData?.rating && tourData?.reviews?.length > 0 && (
+					<>
+						<span>
+							{Array.from({ length: Number(tourData.rating) }, (_, _i) => (
+								<StarIconFilled key={_i} className='me-1' />
+							))}
+							{Array.from({ length: 5 - Math.floor(Number(tourData.rating)) }, (_, _i) => (
+								<StarIconOutline key={_i} className='me-1' />
+							))}
+						</span>
+						<span>
+							{tourData?.rating} {tourData.reviews?.length} reviews
+						</span>
+					</>
+				)}
+
+				{!tourData?.rating && (
+					<>
+						<span>
+							<StarIconFilled className='me-1' />
+							<StarIconFilled className='me-1' />
+							<StarIconFilled className='me-1' />
+							<StarIconFilled className='me-1' />
+							<StarIconOutline className='me-1' />
+						</span>
+						<span>{formatNumber(getRandomArbitrary())} reviews</span>
+					</>
+				)}
+			</p>
 			{tourData.images.length > 0 && <TourCardCarousel size='full' slides={tour?.images ?? []} interval={999999999} />}
 			{tourData.images.length === 0 && <img alt={tourData.title} src={tour?.featured_image} className='tour-card__image' />}
 			<button className='tour-card__content' onClick={() => handleClick(tourData)} aria-label={`View details for ${tourData.title}`}>
@@ -50,20 +80,11 @@ export const TourCard = ({ handleClick = () => {}, tour = {} as Tour }: TourCard
 					</p>
 					<p className='tour-detail m-0'>
 						<strong>Destinations: </strong>{' '}
-						<span>{tourData.destination.map((dest: any, _index: number) => dest.title).join(', ')}</span>
+						<span>{tourData.destination.map((dest: any, _index: number) => dest.location).join(', ')}</span>
 					</p>
 					<p className='tour-detail m-0'>
 						<strong>Experiences: </strong>{' '}
 						{tourData.african_safari_experiences.map((dest: any, _index: number) => dest.title).join(', ')}
-					</p>
-					<p className='tour-detail m-0'>
-						{Array.from({ length: Number(tourData.rating) }, (_, _i) => (
-							<StarIconFilled key={_i} className='me-1' />
-						))}
-						{Array.from({ length: 5 - Math.floor(Number(tourData.rating)) }, (_, _i) => (
-							<StarIconOutline key={_i} className='me-1' />
-						))}
-						{tourData?.rating ?? 'No rating yet'} from {tourData.reviews?.length ?? 'No '} reviews
 					</p>
 					<Tooltip target='.tour-price' mouseTrack mouseTrackTop={10} />
 				</Link>

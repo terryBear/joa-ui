@@ -23,8 +23,8 @@ export const SafariTourBooking = ({ tour, travelDate, travellers, travellersChil
 					Back
 				</Button>
 				<Row>
-					<Col xs={12} md={12}>
-						<div className='my-5'>
+					<Col xs={12} md={8}>
+						<div className='my-5' style={{ fontSize: '12px' }}>
 							<span>
 								<span
 									style={{
@@ -79,8 +79,6 @@ export const SafariTourBooking = ({ tour, travelDate, travellers, travellersChil
 								<strong>Travel Specialist email your Quote</strong>
 							</span>
 						</div>
-					</Col>
-					<Col xs={12} md={8}>
 						<Card className='border-1'>
 							<img src={tour?.featured_image} alt={tour?.title} className='card-img-top' />
 							<Card.Body>
@@ -129,7 +127,7 @@ export const SafariTourBooking = ({ tour, travelDate, travellers, travellersChil
 						</Card>
 					</Col>
 					<Col xs={12} md={4}>
-						<Card className='border-1'>
+						<Card className='border-1 sticky-auto' style={{ top: '0' }}>
 							<Card.Header className='bg-dark text-white text-center'>
 								<Card.Title>Safari details</Card.Title>
 							</Card.Header>

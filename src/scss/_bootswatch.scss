@@ -63,6 +63,10 @@ $web-font-path: 'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400.
 	margin-right: 2rem;
 }
 
+.font-button {
+	font-family: $typography-button-font-family;
+}
+
 // Buttons
 
 .btn {

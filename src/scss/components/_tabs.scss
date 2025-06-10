@@ -1,19 +1,37 @@
+.sticky-auto {
+	position: sticky;
+	z-index: 1;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
 .page-detail-tabs {
 	margin: 0 -3px;
-	.nav-item {
-		margin: 0 3px;
-	}
-	.nav-link {
-		background-color: $ui-primary !important;
-		color: $white !important;
-		text-transform: uppercase !important;
-		letter-spacing: 2px !important;
-		line-height: 23px !important;
-		font-weight: 600;
-		font-size: $font-size-sm !important;
-		&.active {
-			background-color: $ui-info !important;
-			color: $ui-dark !important;
+
+	.nav-tabs {
+		position: sticky;
+		top: 120px;
+		z-index: 1;
+		overflow-x: hidden;
+		background: #fff;
+		margin: 0px -3px 0;
+		overflow-y: auto;
+		padding: 0px 0;
+		.nav-item {
+			margin: 0 3px;
+		}
+		.nav-link {
+			background-color: $ui-primary !important;
+			color: $white !important;
+			text-transform: uppercase !important;
+			letter-spacing: 2px !important;
+			line-height: 23px !important;
+			font-weight: 600;
+			font-size: $font-size-sm !important;
+			&.active {
+				background-color: $ui-info !important;
+				color: $ui-dark !important;
+			}
 		}
 	}
 }
