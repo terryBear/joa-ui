@@ -89,6 +89,9 @@
 		justify-content: space-between;
 		overflow: hidden;
 		height: 100%;
+		width: 100%;
+		border: 0;
+		text-align: left;
 
 		.tour-card__text {
 			background-color: $ui-light;
