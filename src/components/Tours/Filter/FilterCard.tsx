@@ -28,7 +28,7 @@ export const FilterCard = ({ filters }: FilterCardProps) => {
 	const [filterQuery, setFilterQueries] = useState<FilterSortOptions>(defaultFilters)
 
 	return (
-		<Card className='border-1'>
+		<Card className='bg-white'>
 			<Card.Body>
 				<h4>Refine your safari</h4>
 				<Card.Text>

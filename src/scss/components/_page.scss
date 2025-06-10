@@ -1,18 +1,12 @@
 .page-detail {
-  padding: 5em 0;
+	padding: 5em 0;
 
-  .page-detail-header {
-    text-align: center;
+	.page-detail-header {
+		text-align: center;
+	}
 
-    .read-more-content {
-      background-color: $gray-100;
-      text-align: left;
-      padding: 2em;
-    }
-  }
-
-  .page-detail-faq {
-    padding: 5em 0;
-    text-align: center;
-  }
+	.page-detail-faq {
+		padding: 5em 0;
+		text-align: center;
+	}
 }

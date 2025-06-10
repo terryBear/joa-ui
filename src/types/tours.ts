@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface Rates {
 	currency: string
 	amount: number
@@ -176,13 +177,13 @@ export interface Tour {
 	short_description: string
 	long_description: string
 	featured_image: string
-	images: string[]
-	rates: Rates[]
+	images: any[]
+	rate: Rates[]
 	itinerary: Itinerary[]
 	itinerary_summary: ItinerarySummary[]
 	inclusions: Inclusions[]
 	exclusions: Exclusions[]
-	destination: string
+	destination: any[]
 	african_safari_experiences: Experiences[]
 	safari_types: SafariTypes[]
 	accomodation: AccomodationType[]
@@ -201,7 +202,7 @@ export interface Tour {
 	reviews?: Reviews[]
 }
 
-export interface TourCardProps extends Tour {
+export interface TourCardProps {
 	handleClick: (tour: Tour) => void
-	tour: Tour | null
+	tour: Tour | null | any
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { RadioButton } from 'primereact/radiobutton'
 import { Slider } from 'primereact/slider'
@@ -11,13 +12,21 @@ const data = {
 	description: 'Complete the form below to help us tailor a personalized itinerary that reflects your preferences and budget.',
 }
 
-export const Budget: FC<StepFormTemplateProps> = () => {
+export const Budget: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 	const [budget, setBudget] = useState<number | [number, number] | null | undefined>(5000)
 	const [mostImportant, setMostImportant] = useState<string>('')
 
 	useEffect(() => {
 		console.log(mostImportant)
 	}, [mostImportant])
+
+	useEffect(() => {
+		const Budget = {
+			budget,
+			mostImportant,
+		}
+		handleFormChange('', Budget)
+	}, [budget, mostImportant])
 
 	return (
 		<div className='form-detail'>

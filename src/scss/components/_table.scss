@@ -1,0 +1,14 @@
+.about-us-table {
+	width: 100%;
+	border-collapse: collapse;
+	tbody {
+		tr {
+			td {
+				padding: 0.5rem;
+				border: 0;
+				border-bottom: 1px solid $ui-info;
+				text-align: left;
+			}
+		}
+	}
+}

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Calendar } from 'primereact/calendar'
 import { InputNumber } from 'primereact/inputnumber'
@@ -5,7 +6,7 @@ import { InputSwitch } from 'primereact/inputswitch'
 import { MultiSelect } from 'primereact/multiselect'
 import { Slider } from 'primereact/slider'
 import { Nullable } from 'primereact/ts-helpers'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { DESTINATIONS } from '../../../constants/destinations'
 import { StepFormTemplateProps } from '../../../types/forms'
@@ -38,7 +39,7 @@ const childAgeRanges = [
 	{ name: '15-16', code: '15-16' },
 ]
 
-export const TripDetails: FC<StepFormTemplateProps> = () => {
+export const TripDetails: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 	const [selectedDestinations, setSelectedDestinations] = useState<string[]>([])
 	const [travelDate, setTravelDate] = useState<Nullable<Date>>(null)
 	const [nights, setNights] = useState<[number, number]>([5, 45])
@@ -47,6 +48,20 @@ export const TripDetails: FC<StepFormTemplateProps> = () => {
 	const [children, setChildren] = useState<number | null>(0)
 	const [adultAges, setAdultAges] = useState<number[]>([])
 	const [childAges, setChildAges] = useState<number[]>([])
+
+	useEffect(() => {
+		const tripDetails = {
+			selectedDestinations,
+			travelDate,
+			nights,
+			adults,
+			hasChildren,
+			children,
+			adultAges,
+			childAges,
+		}
+		handleFormChange('', tripDetails)
+	}, [selectedDestinations, travelDate, nights, adults, hasChildren, children, adultAges, childAges])
 
 	return (
 		<div className='form-detail'>

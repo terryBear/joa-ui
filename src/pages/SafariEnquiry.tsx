@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { JSX, useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import { Banner } from '../components/Banner/Banner'
@@ -7,7 +8,10 @@ import { TravelStyle } from '../components/SafariEnquiry/FormComponents/TravelSt
 import { TripDetails } from '../components/SafariEnquiry/FormComponents/TripDetails'
 
 import { Steps } from 'primereact/steps'
+import { Nullable } from 'primereact/ts-helpers'
 import { MainAppLayout } from '../layout/Layout'
+import { useSafariContext } from '../Providers/SafariProvider'
+import { useContactService } from '../services/useContactService'
 
 export interface StepWizardProps {
 	index: number
@@ -16,9 +20,85 @@ export interface StepWizardProps {
 }
 
 export const SafariEnquiry = () => {
+	const { createBookingRequest } = useContactService()
+	const { handleSnackbar } = useSafariContext()
 	const [activeStep, setActiveStep] = useState(1)
+	const [formData, setFormData] = useState<{
+		selectedDestinations: string[]
+		travelDate: Nullable<Date>
+		nights: [number, number]
+		adults: number | null
+		hasChildren: boolean
+		children: number | null
+		adultAges: number[]
+		childAges: number[]
+		travelStyles: string[]
+		contact: {
+			name: string
+			email: string
+			phone_code: string
+			phone: string
+			country: string
+		}
+		budget: number | [number, number] | null | undefined
+		mostImportant: string
+		message: string
+		subject: string
+	}>({
+		selectedDestinations: [],
+		travelDate: null,
+		nights: [5, 45],
+		adults: 0,
+		hasChildren: false,
+		children: 0,
+		adultAges: [],
+		childAges: [],
+		travelStyles: [],
+		contact: {
+			name: '',
+			email: '',
+			phone_code: '',
+			phone: '',
+			country: '',
+		},
+		budget: 5000,
+		mostImportant: '',
+		message: 'Booking an African safari',
+		subject: 'Safari Enquiry',
+	})
 
-	const handleFormChange = () => {}
+	const handleFormChange = (key: string, value: any) => {
+		let data = {
+			...formData,
+		}
+		if (key) {
+			// @ts-expect-error No index signature with a parameter of type 'string' was found
+			data[key] = value
+		} else {
+			data = {
+				...formData,
+				...value, // Assuming value is an object with the same structure as formData
+			}
+		}
+		setFormData({ ...data })
+	}
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault()
+		try {
+			await createBookingRequest(formData)
+			handleSnackbar({
+				message: 'Your message has been sent successfully.',
+				severity: 'success',
+			})
+		} catch (error) {
+			console.error('Error sending message:', error)
+			handleSnackbar({
+				message: 'Your message cannot be sent at this time. Please try again later.',
+				severity: 'danger',
+			})
+		}
+	}
 
 	const [steps] = useState<StepWizardProps[]>([
 		{
@@ -56,12 +136,7 @@ export const SafariEnquiry = () => {
 			/>
 			<div className='safari-enquiry'>
 				<Container className='py-5'>
-					<Form
-						onSubmit={(e) => {
-							e.preventDefault()
-							e.stopPropagation()
-							console.log('Form submitted', e)
-						}}>
+					<Form onSubmit={handleSubmit}>
 						<div className='card'>
 							<Steps
 								model={steps}

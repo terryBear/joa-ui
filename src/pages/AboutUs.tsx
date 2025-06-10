@@ -7,9 +7,14 @@ export const AboutUs = () => {
 		<MainAppLayout>
 			<Banner
 				hero={true}
-				title='Discover the Essence of Jewel of Africa Safaris'
-				description='Jewel of Africa was founded in 2004 and has built a solid reputation as a top guided-safari and tour operator through consistent delivery of expertise, flexibility and variety.'
-				image='/images/JOA_Header_AboutUs.jpg'
+				title={
+					<>
+						<strong>About</strong> Jewel of Africa
+					</>
+				}
+				description='At Jewel of Africa Safaris, every journey is a reflection of our personal connection to Africa — handcrafted by a team who live here, know the land intimately, and design luxury safaris not just to impress, but to transform.'
+				image='/images/Hero - About Us.jpg'
+				className='text-center'
 			/>
 			<Team />
 		</MainAppLayout>

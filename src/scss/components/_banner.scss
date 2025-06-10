@@ -31,8 +31,9 @@
 		}
 
 		p {
-			font-size: 22px;
+			font-size: 18px;
 			font-weight: 400;
+			line-height: 1.8;
 		}
 	}
 
@@ -40,6 +41,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: center;
 		position: absolute;
 		left: 0;
 		right: 0;
@@ -54,6 +56,25 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		margin-top: 100px;
+
+		&.text-center {
+			.banner__content {
+				text-align: center;
+				align-items: center;
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				p {
+					margin: 0 auto;
+					width: 100%;
+					max-width: 80%;
+				}
+			}
+		}
 
 		.banner__content {
 			padding: 3em 1em;
@@ -79,6 +100,12 @@
 				font-weight: 100;
 				font-family: 'Canela Thin';
 				font-size: 6em;
+
+				strong {
+					font-weight: 600;
+					font-family: 'Canela Text Trial';
+					color: $ui-primary;
+				}
 			}
 
 			p {
@@ -147,6 +174,16 @@
 					}
 				}
 			}
+		}
+	}
+
+	&.h50 {
+		.banner__image {
+			min-height: 50vh;
+			object-position: bottom;
+		}
+		.banner__content {
+			min-height: 50vh;
 		}
 	}
 }

@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Checkbox } from 'primereact/checkbox'
 import { InputTextarea } from 'primereact/inputtextarea'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { StepFormTemplateProps } from '../../../types/forms'
 
@@ -58,8 +59,14 @@ const travelStyle_options = [
 	},
 ]
 
-export const TravelStyle: FC<StepFormTemplateProps> = () => {
+export const TravelStyle: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 	const [travelStyles, setTravelStyles] = useState<string[]>([])
+
+	useEffect(() => {
+		if (travelStyles) {
+			handleFormChange('', travelStyles)
+		}
+	}, [travelStyles])
 	return (
 		<div className='form-detail'>
 			<h4>{data.title}</h4>

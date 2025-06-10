@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Dropdown } from 'primereact/dropdown'
 import { InputMask } from 'primereact/inputmask'
 import { InputText } from 'primereact/inputtext'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { COUNTRIES, PHONE_COUNTRIES } from '../../../constants/countries'
 import { StepFormTemplateProps } from '../../../types/forms'
@@ -12,7 +13,7 @@ const data = {
 	description: 'Share your contact details, and let’s start crafting your dream safari experience!',
 }
 
-export const ContactInfo: FC<StepFormTemplateProps> = () => {
+export const ContactInfo: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 	const [contact, setContact] = useState<any>({
 		name: '',
 		email: '',
@@ -20,6 +21,12 @@ export const ContactInfo: FC<StepFormTemplateProps> = () => {
 		phone: '',
 		country: '',
 	})
+
+	useEffect(() => {
+		if (contact) {
+			handleFormChange('contact', contact)
+		}
+	}, [contact])
 	return (
 		<div className='form-detail'>
 			<h4>{data.title}</h4>
@@ -47,8 +54,11 @@ export const ContactInfo: FC<StepFormTemplateProps> = () => {
 				<Form.Label className='fw-bold w-100'>Phone:</Form.Label>
 
 				<Dropdown
-					value={contact.country}
-					onChange={(e) => setContact({ ...contact, phone_code: e.value })}
+					value={contact.phone_code}
+					onChange={(e) => {
+						console.log(e)
+						setContact({ ...contact, phone_code: e.value })
+					}}
 					options={PHONE_COUNTRIES}
 					optionLabel='name'
 					placeholder='Ex: +1'

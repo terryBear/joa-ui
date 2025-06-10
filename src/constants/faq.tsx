@@ -1,36 +1,87 @@
-import { FaqItemProps } from "../components/Faq/Faq";
+import { FaqItemProps } from '../components/Faq/Faq'
 
 export const FAQ: FaqItemProps[] = [
-  {
-    key: "0",
-    question: "What is a Luxury Safari?",
-    answer: `A Luxury Safari is a high-end, exclusive experience that combines the adventure of wildlife exploration with the comfort and opulence of world-class accommodations. A luxury safari provides a more intimate and personalized journey through Africa’s most breathtaking landscapes, unlike traditional safaris, offering guests a chance to connect with nature without sacrificing comfort or style. The type of safari takes place in private game reserves or remote, pristine wilderness areas, ensuring exclusivity and extraordinary wildlife encounters.
-
-The key element of a luxury safari is staying at luxury lodges in secluded areas designed to offer unparalleled views of the natural surroundings. These lodges provide five-star amenities such as spacious suites, private decks, and plunge pools, allowing guests to relax comfortably while immersed in the beauty of the African wilderness. Guests enjoy private dining experiences, with gourmet meals prepared by skilled chefs served under the stars in exclusive settings like bush clearings or riverbanks, creating an unforgettable dining experience.
-
-A Luxury Safari offers tailored itineraries catering to each guest’s preferences and interests. Safari itineraries are customized to ensure every moment of the safari is meaningful and memorable, whether it is a private game drive, a guided bush walk, or a helicopter ride over the savannah. Guests participate in activities such as wildlife photography, hot air balloon safaris, or cultural visits, all while receiving personalized service throughout their journey. A Luxury African Safari stands out for its ability to seamlessly blend the excitement of wildlife encounters with the indulgence of fine living, offering a truly exceptional way to experience Africa’s natural beauty.
-
-When is the Best Time for Luxury Safari Tour?
-The Best Time for Luxury Safari Tour is during the dry season, which varies by region but falls between June and October in most African countries. The climate is cooler, and water sources become scarce, drawing wildlife to rivers and waterholes during the period, making it easier to spot animals. The dry season is ideal for game viewing because vegetation is less dense, increasing visibility. It is the best time for activities such as walking safaris and hot air balloon rides, as the weather is more predictable and pleasant.
-
-Another key consideration for timing a Luxury Safari Tour is the Great Migration between July and October in East Africa in Tanzania’s Serengeti and Kenya’s Maasai Mara. The time marks the movement of millions of wildebeest, zebras, and antelopes across the plains in search of fresh grazing lands, followed by predators such as lions, leopards, and cheetahs. Witnessing the spectacle from a luxury lodge or during a private game drive is one of the most awe-inspiring safari experiences, making the period highly sought after by wildlife enthusiasts.
-
-Visitors are drawn to the area during the dry season from July to September. However, the shoulder seasons, just before and after the peak dry season for couples seeking a more intimate and quieter experience, provide an ideal balance of good weather and fewer tourists. The dry season is recommended for the safety and ease of wildlife viewing for families with kids. Luxury lodges even offer child-friendly activities and amenities. Check the lodge policies in advance, but the cooler, dry season months are the most comfortable for humans and pets for families traveling with pets.
-
-How Safe is Luxury Safari Tour?
-A Luxury Safari Tour is 99% safe if guests follow the guidelines and safety protocols set by the safari operators and lodges. Luxury safari operators prioritize the safety and well-being of their guests, offering well-trained guides, secure vehicles, and expert knowledge of the wildlife. Luxury lodges are located within private reserves where human-wildlife interactions are closely managed, ensuring a controlled and secure environment for visitors. Game drives are conducted in designed vehicles that provide comfort and protection while allowing guests to observe wildlife up close.
-
- 
-
-Additional safety measures provided on a Luxury Safari Tour include personal guides experienced in wildlife behavior and using private vehicles for more personalized and safer experiences. Lodges have emergency medical services on-site or nearby, ensuring quick access to healthcare if needed. Expert rangers accompany guests to ensure their safety in the wild, and clear communication protocols are followed to avoid potential risks for walking safaris. Luxury camps and lodges are equipped with secure fencing, alarm systems, and trained staff to ensure the safety of guests.
-
-
-Visitors on a Luxury Safari Tour are advised to take malaria prophylaxis when traveling to areas where malaria is present during the rainy season when mosquitoes are more active. Consult a healthcare provider before the trip for recommendations on the appropriate medication. Yellow fever vaccinations are required or recommended for visitors traveling to tropical regions such as East Africa. Ensuring these health precautions are taken helps make the experience safe and enjoyable for all guests.`,
-  },
-  {
-    key: "1",
-    question: "What are the Advantages of Luxury Safari Tour?",
-    answer: `What are the Advantages of Luxury Safari Tour?
+	{
+		key: '0',
+		question: 'What is a Luxury Safari?',
+		answer: (
+			<>
+				<p>
+					A Luxury Safari is a high-end, exclusive experience that combines the adventure of wildlife exploration with the comfort
+					and opulence of world-class accommodations. A luxury safari provides a more intimate and personalized journey through
+					Africa’s most breathtaking landscapes, unlike traditional safaris, offering guests a chance to connect with nature
+					without sacrificing comfort or style. The type of safari takes place in private game reserves or remote, pristine
+					wilderness areas, ensuring exclusivity and extraordinary wildlife encounters.
+				</p>
+				<p>
+					The key element of a luxury safari is staying at luxury lodges in secluded areas designed to offer unparalleled views of
+					the natural surroundings. These lodges provide five-star amenities such as spacious suites, private decks, and plunge
+					pools, allowing guests to relax comfortably while immersed in the beauty of the African wilderness. Guests enjoy private
+					dining experiences, with gourmet meals prepared by skilled chefs served under the stars in exclusive settings like bush
+					clearings or riverbanks, creating an unforgettable dining experience.
+				</p>
+				<p>
+					A Luxury Safari offers tailored itineraries catering to each guest’s preferences and interests. Safari itineraries are
+					customized to ensure every moment of the safari is meaningful and memorable, whether it is a private game drive, a
+					guided bush walk, or a helicopter ride over the savannah. Guests participate in activities such as wildlife photography,
+					hot air balloon safaris, or cultural visits, all while receiving personalized service throughout their journey. A Luxury
+					African Safari stands out for its ability to seamlessly blend the excitement of wildlife encounters with the indulgence
+					of fine living, offering a truly exceptional way to experience Africa’s natural beauty.
+				</p>
+				<hr />
+				<h4>When is the Best Time for Luxury Safari Tour?</h4>
+				<p>
+					The Best Time for Luxury Safari Tour is during the dry season, which varies by region but falls between June and October
+					in most African countries. The climate is cooler, and water sources become scarce, drawing wildlife to rivers and
+					waterholes during the period, making it easier to spot animals. The dry season is ideal for game viewing because
+					vegetation is less dense, increasing visibility. It is the best time for activities such as walking safaris and hot air
+					balloon rides, as the weather is more predictable and pleasant.
+				</p>
+				<p>
+					Another key consideration for timing a Luxury Safari Tour is the Great Migration between July and October in East Africa
+					in Tanzania’s Serengeti and Kenya’s Maasai Mara. The time marks the movement of millions of wildebeest, zebras, and
+					antelopes across the plains in search of fresh grazing lands, followed by predators such as lions, leopards, and
+					cheetahs. Witnessing the spectacle from a luxury lodge or during a private game drive is one of the most awe-inspiring
+					safari experiences, making the period highly sought after by wildlife enthusiasts.
+				</p>
+				<p>
+					Visitors are drawn to the area during the dry season from July to September. However, the shoulder seasons, just before
+					and after the peak dry season for couples seeking a more intimate and quieter experience, provide an ideal balance of
+					good weather and fewer tourists. The dry season is recommended for the safety and ease of wildlife viewing for families
+					with kids. Luxury lodges even offer child-friendly activities and amenities. Check the lodge policies in advance, but
+					the cooler, dry season months are the most comfortable for humans and pets for families traveling with pets.
+				</p>
+				<hr />
+				<h4>How Safe is Luxury Safari Tour?</h4>
+				<p>
+					A Luxury Safari Tour is 99% safe if guests follow the guidelines and safety protocols set by the safari operators and
+					lodges. Luxury safari operators prioritize the safety and well-being of their guests, offering well-trained guides,
+					secure vehicles, and expert knowledge of the wildlife. Luxury lodges are located within private reserves where
+					human-wildlife interactions are closely managed, ensuring a controlled and secure environment for visitors. Game drives
+					are conducted in designed vehicles that provide comfort and protection while allowing guests to observe wildlife up
+					close.
+				</p>
+				<p>
+					Additional safety measures provided on a Luxury Safari Tour include personal guides experienced in wildlife behavior and
+					using private vehicles for more personalized and safer experiences. Lodges have emergency medical services on-site or
+					nearby, ensuring quick access to healthcare if needed. Expert rangers accompany guests to ensure their safety in the
+					wild, and clear communication protocols are followed to avoid potential risks for walking safaris. Luxury camps and
+					lodges are equipped with secure fencing, alarm systems, and trained staff to ensure the safety of guests.
+				</p>
+				<p>
+					Visitors on a Luxury Safari Tour are advised to take malaria prophylaxis when traveling to areas where malaria is
+					present during the rainy season when mosquitoes are more active. Consult a healthcare provider before the trip for
+					recommendations on the appropriate medication. Yellow fever vaccinations are required or recommended for visitors
+					traveling to tropical regions such as East Africa. Ensuring these health precautions are taken helps make the experience
+					safe and enjoyable for all guests.
+				</p>
+			</>
+		),
+	},
+	{
+		key: '1',
+		question: 'What are the Advantages of Luxury Safari Tour?',
+		answer: `What are the Advantages of Luxury Safari Tour?
 The Advantages of the Luxury Safari Tour are listed below.
 Exclusive Wildlife Viewing: Luxury safaris occur in private reserves or areas with restricted access, ensuring fewer tourists and more intimate wildlife encounters. Guests access private game drives and exclusive viewing spots, unlike regular safaris involving larger crowds.
 High-End Accommodations: Luxury safari lodges provide world-class accommodations, including private suites, plunge pools, spa services, and fine dining. These lodges are designed to offer comfort and opulence in the heart of the wilderness, a level of service and comfort that regular safari camps do not match.
@@ -76,11 +127,11 @@ Yes, the Luxury Safari Tour has access to exclusive areas. Luxury safaris are co
 
 Is Luxury Safari Tour have Private Tour Guide?
 Yes, luxury safari tours have private tour guides. Luxury safaris provide guests with expert guides and trackers highly trained in wildlife behavior, conservation, and the local ecosystem. These private guides offer personalized attention and ensure guests have a customized and enriched experience. They tailor game drives and activities based on guest preferences, ensuring more flexible schedules and exclusive wildlife encounters. The presence of skilled trackers further enhances the experience, as they help locate elusive animals, such as leopards or rare bird species, offering deeper insights into the wilderness.`,
-  },
-  {
-    key: "2",
-    question: "What Unique Experience does Luxury Safari Tour Offer?",
-    answer: `What Unique Experience does Luxury Safari Tour Offer?
+	},
+	{
+		key: '2',
+		question: 'What Unique Experience does Luxury Safari Tour Offer?',
+		answer: `What Unique Experience does Luxury Safari Tour Offer?
 The Unique Experience that Luxury Safari Tour Offers goes far beyond traditional safari adventures, blending exceptional wildlife encounters with personalized, high-end services. One of the standout features of a luxury safari is the opportunity to experience exclusive luxury activities that immerse guests in the beauty of Africa while providing comfort and privacy. For instance, luxury dining on safari is a truly memorable experience, with gourmet meals prepared by top chefs. These meals are served in breathtaking locations such as under the stars in the bush, beside a riverbank, or on a private terrace overlooking the savannah.
 
  
@@ -120,11 +171,11 @@ Luxury safari tours offer outdoor dining experiences that connect guests more de
 
 
 Private dining is another feature of luxury safaris for visitors seeking privacy. Couples or families have meals on private decks or terraces overlooking the savannah or a nearby watering hole where wildlife gathers. The exclusive experience provides complete seclusion, adding a personal touch to a luxurious culinary journey.`,
-  },
-  {
-    key: "3",
-    question: "Why Choose Jewel of Africa Safaris for Luxury Safari Tour?",
-    answer: `Why Choose Jewel of Africa Safaris for Luxury Safari Tour?
+	},
+	{
+		key: '3',
+		question: 'Why Choose Jewel of Africa Safaris for Luxury Safari Tour?',
+		answer: `Why Choose Jewel of Africa Safaris for Luxury Safari Tour?
 Choose Jewel of Africa Safaris for a Luxury Safari Tour because they offer a customizable luxury experience catering to each guest’s unique preferences. A safari itinerary designed by their expert team meets customers’ desires, whether a romantic getaway, a family adventure, or a wildlife photography expedition. Access to some of the most exclusive safari destinations ensures that the trip is personalized from start to finish.
 
  
@@ -137,5 +188,5 @@ Jewel of Africa Safaris grants exclusive access to top safari destinations, incl
 
 
 Jewel of Africa Safaris is known for its exceptional service, which includes arranging luxury transportation options like chartered flights and private vehicles. They handle all the details, ensuring smooth logistics so that customers focus on enjoying the safari. Jewel of Africa Safaris delivers a seamless, high-end safari experience with its expertise and commitment to luxury.`,
-  },
-];
+	},
+]

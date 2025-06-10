@@ -1,0 +1,18 @@
+.joa-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 4px 13px;
+	border: 1px solid $ui-dark;
+	border-radius: 3px;
+	background-color: transparent;
+	color: $ui-dark;
+	font-size: 12px;
+	font-weight: 700;
+	margin-right: 0.5rem;
+	font-family: $typography-heading-font-family !important;
+	&.active {
+		background-color: $ui-info;
+		color: $white;
+		border: 1px solid $ui-info;
+	}
+}

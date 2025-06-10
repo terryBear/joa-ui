@@ -1,0 +1,19 @@
+.safari-tour-booking {
+	display: block;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	top: 0;
+	right: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	z-index: 99999;
+	padding: 30px;
+
+	.container {
+		border-radius: 10px;
+		height: 90vh;
+		padding: 30px;
+		overflow-y: auto;
+	}
+}

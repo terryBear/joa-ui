@@ -8,7 +8,11 @@ export const ContactUs = () => {
 		<MainAppLayout>
 			<Banner
 				hero={true}
-				title='Connect with Jewel of Africa Safaris'
+				title={
+					<>
+						<strong className='text-info'>Connect</strong> with Jewel of Africa Safaris
+					</>
+				}
 				description='With almost 20-years in the trade, Jewel of Africa Safaris has the inspiration and expertise to help you enjoy Africa at its finest. The team responds swiftly to queries and communicates directly with you.'
 			/>
 			<div className='card py-5'>

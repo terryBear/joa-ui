@@ -2,11 +2,12 @@ import React, { FC, JSX } from 'react'
 import { Container } from 'react-bootstrap'
 
 export interface BannerProps {
-	title?: string
+	title?: string | JSX.Element | React.ReactNode
 	description?: string
 	image?: string
 	button?: React.ReactNode | JSX.Element
 	hero?: boolean
+	className?: string
 }
 
 export const Banner: FC<BannerProps> = ({
@@ -15,10 +16,11 @@ export const Banner: FC<BannerProps> = ({
 	button = null,
 	image = null,
 	hero = false,
+	className = '',
 }) => {
 	return (
-		<aside className={`banner ${hero && 'hero'}`}>
-			{image && <img alt={title} src={image} className='banner__image' />}
+		<aside className={`banner ${hero && 'hero'} ${className}`}>
+			{image && <img alt={description} src={image} className='banner__image' />}
 			<div className='banner__content'>
 				<Container>
 					<h1 className='text-capitalize '>{title}</h1>

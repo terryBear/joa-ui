@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useEffect } from 'react'
-import { Button, Image } from 'react-bootstrap'
+import { Button, Dropdown, Image } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link, NavLink, useLocation } from 'react-router'
+import { DESTINATIONS } from '../../constants/destinations'
 
 export const NavBar = () => {
 	const location = useLocation()
@@ -28,15 +29,24 @@ export const NavBar = () => {
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='justify-content-end w-100 m-0 align-items-center'>
-						<Nav.Link
-							as={NavLink}
-							// @ts-ignore
-							className={({ isActive }: any) => {
-								return isActive ? 'active' : ''
-							}}
-							to='/destinations'>
-							Destinations
-						</Nav.Link>
+						<Dropdown>
+							<Dropdown.Toggle variant='link' id='dropdown-basic' className='text-decoration-none text-dark'>
+								Destinations
+							</Dropdown.Toggle>
+							<Dropdown.Menu>
+								{DESTINATIONS.map((destination: any) => (
+									<Dropdown.Item
+										as={NavLink}
+										// @ts-ignore
+										className={({ isActive }: any) => {
+											return isActive ? 'active' : ''
+										}}
+										to={`/destinations/${destination.slug}`}>
+										{destination.title}
+									</Dropdown.Item>
+								))}
+							</Dropdown.Menu>
+						</Dropdown>
 						<Nav.Link
 							as={NavLink}
 							// @ts-ignore
@@ -45,15 +55,6 @@ export const NavBar = () => {
 							}}
 							to='/safari-tour'>
 							Safari & Tours
-						</Nav.Link>
-						<Nav.Link
-							as={NavLink}
-							// @ts-ignore
-							className={({ isActive }) => {
-								return isActive ? 'active' : ''
-							}}
-							to='/experiences'>
-							Experiences
 						</Nav.Link>
 						<Nav.Link
 							as={NavLink}

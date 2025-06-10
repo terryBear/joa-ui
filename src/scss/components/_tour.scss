@@ -17,16 +17,40 @@
 		border: 1px solid $ui-primary;
 	}
 
+	.tour-car-price {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		background-color: $ui-dark;
+		padding: 10px 20px;
+		border-radius: 3px;
+		color: $white;
+		font-size: 16px;
+		z-index: 6;
+
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			right: -10px;
+			top: 2px;
+			width: 0;
+			height: 0;
+			border-top: 20px solid transparent;
+			border-bottom: 20px solid transparent;
+			border-left: 20px solid $ui-dark;
+		}
+	}
 	.tour-card__image {
 		width: 100%;
-		height: 100%;
+		height: calc(100% - 141px) !important;
 		object-fit: cover;
 		position: absolute;
 		left: 0;
 		right: 0;
 		top: 0;
 		bottom: 0;
-		z-index: 2;
+		z-index: 5;
 		filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
 		-webkit-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
 		-moz-filter: brightness(1.05) contrast(130%) saturate(160%) sepia(20%) hue-rotate(15deg);
@@ -72,6 +96,13 @@
 			overflow: hidden;
 			height: 141px;
 			width: 100%;
+			text-decoration: none;
+
+			p {
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
 		}
 
 		.btn-link {
@@ -90,36 +121,12 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			align-items: center;
-			margin: 5px 0 !important;
+			margin: 0 !important;
 
 			svg {
 				width: 20px;
 				height: 20px;
 				color: $ui-secondary;
-			}
-		}
-
-		.tour-car-price {
-			position: absolute;
-			right: 20px;
-			top: 20px;
-			background-color: $ui-dark;
-			padding: 10px 20px;
-			border-radius: 3px;
-			color: $white;
-			font-size: 16px;
-
-			&:before {
-				content: '';
-				position: absolute;
-				display: block;
-				right: -10px;
-				top: 2px;
-				width: 0;
-				height: 0;
-				border-top: 20px solid transparent;
-				border-bottom: 20px solid transparent;
-				border-left: 20px solid $ui-dark;
 			}
 		}
 	}
@@ -176,4 +183,15 @@
 
 .icon-image {
 	width: 50px;
+}
+
+.carousel-indicators [data-bs-target] {
+	width: 10px;
+	height: 10px;
+	border-radius: 10px !important;
+}
+
+.carousel-indicators {
+	justify-content: flex-start !important;
+	margin-left: 20px !important;
 }

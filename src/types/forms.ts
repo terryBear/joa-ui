@@ -1,7 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface StepFormTemplateProps {
-  index: number;
-  handleFormChange: (
-    event: React.MouseEvent<HTMLElement>,
-    index: number
-  ) => void;
+	index: number
+	handleFormChange: (key: string, value: any) => void
 }
