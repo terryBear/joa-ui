@@ -19,7 +19,7 @@ export const Faq: FC<FaqProps> = ({ items = [] }) => {
 		<Container fluid className='faq-list-container'>
 			<Row>
 				<Col xs={12} md={4} className='mb-4'>
-					<ul>
+					<ul className='sticky-auto' style={{ top: 145 }}>
 						<li>
 							<Button variant='link' onClick={() => setActiveKey(0)} className={`${activeKey === 0 ? 'active' : ''}`}>
 								<ChevronRightIcon className='me-2' />

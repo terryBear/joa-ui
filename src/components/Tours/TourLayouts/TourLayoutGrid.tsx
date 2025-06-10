@@ -11,6 +11,7 @@ import { Tour } from '../../../types/tours'
 import { JoaChip } from '../../../ui-library/JoaChip'
 import { TitleDivider } from '../../../ui-library/TitleDivider'
 import { FilterCard } from '../Filter/FilterCard'
+import { FilterHeader } from '../Filter/FilterHeader'
 import { TourCard } from '../TourCard/TourCard'
 
 export interface TourLayoutGridProps {
@@ -64,7 +65,7 @@ const presetFilters = [
 // @ts-ignore
 export const TourLayoutGrid = ({ args = {} }) => {
 	const { getSafariList } = useSafariService()
-	const { setIsLoading } = useSafariContext()
+	const { setIsLoading, layoutview } = useSafariContext()
 	const [tours, setTours] = useState<Tour[]>()
 	const [activeChip, setActiveChip] = useState('')
 
@@ -126,9 +127,10 @@ export const TourLayoutGrid = ({ args = {} }) => {
 						/>
 					</Col>
 					<Col xs={12} md={8} lg={9} className='mb-4'>
+						<FilterHeader />
 						<Row>
 							{tours?.map((tour: Tour, index: number) => (
-								<Col xs={12} md={6} className='mb-4' key={index}>
+								<Col xs={12} md={layoutview === 'grid' ? 6 : 12} className='mb-4' key={index}>
 									<TourCard
 										handleClick={(tour: Tour) => {
 											console.log(tour)

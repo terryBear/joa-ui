@@ -4,6 +4,7 @@
 import { Tooltip } from 'primereact/tooltip'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
+import { useSafariContext } from '../../../Providers/SafariProvider'
 import { Tour, TourCardProps } from '../../../types/tours'
 import { formatCurrency, formatNumber, getRandomArbitrary } from '../../../utils'
 import { StarIconFilled, StarIconOutline } from '../../Icons/Icons'
@@ -11,6 +12,7 @@ import { TourCardCarousel } from './TourCardCarousel'
 
 export const TourCard = ({ handleClick = () => {}, tour = {} as Tour }: TourCardProps) => {
 	const [tourData, setTourData] = useState<Tour | null>(null)
+	const { layoutview } = useSafariContext()
 
 	useEffect(() => {
 		console.log('TourCard useEffect', tourData)
@@ -24,7 +26,7 @@ export const TourCard = ({ handleClick = () => {}, tour = {} as Tour }: TourCard
 	}
 
 	return (
-		<div className='tour-card btn btn-link p-0 text-left text-capitalize text-decoration-none w-100'>
+		<div className={`tour-card btn btn-link p-0 text-left text-capitalize text-decoration-none w-100 view-${layoutview}`}>
 			<div className='tour-car-price'>
 				<span className='tour-price number-font fw-bold' data-pr-tooltip={`Price in USD`}>
 					from {formatCurrency(tour?.rate?.[0]?.amount, 'USD')}

@@ -69,7 +69,6 @@ export const TourPage = () => {
 	}
 
 	useEffect(() => {
-		setIsLoading(true)
 		if (slug) {
 			fetchTour(slug)
 		}
@@ -131,6 +130,7 @@ export const TourPage = () => {
 			generateBreadcrumbsLinks(pathname)
 		}
 	}, [pathname])
+
 	return (
 		<MainAppLayout>
 			{tour && (

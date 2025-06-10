@@ -36,6 +36,8 @@ interface ProviderContextType {
 	handleFilterChange: (filter: FilterOptions[]) => void
 	filter: FilterOptions[]
 	setFilter: Dispatch<SetStateAction<FilterOptions[]>>
+	layoutview: 'list' | 'grid'
+	setLayoutView: Dispatch<SetStateAction<'list' | 'grid'>>
 	snackbar: any
 	setSnackbar: Dispatch<SetStateAction<any>>
 	handleSnackbar: (event: SnackbarProps) => void
@@ -53,6 +55,7 @@ export const SafariProvider: FC<SafariProviderProps> = ({ children }) => {
 	const [filter, setFilter] = useState<FilterOptions[]>([])
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 	const [snackbar, setSnackbar] = useState<any>({})
+	const [layoutview, setLayoutView] = useState<'list' | 'grid'>('grid')
 
 	useEffect(() => {
 		// Initialize Firebase
@@ -92,8 +95,10 @@ export const SafariProvider: FC<SafariProviderProps> = ({ children }) => {
 			handleSnackbar,
 			snackbar,
 			setSnackbar,
+			layoutview,
+			setLayoutView,
 		}),
-		[tours, activeTour, filter, isLoading, snackbar]
+		[tours, activeTour, filter, isLoading, snackbar, layoutview]
 	)
 
 	return (
