@@ -2,4 +2,5 @@
 export interface StepFormTemplateProps {
 	index: number
 	handleFormChange: (key: string, value: any) => void
+	formData: any
 }

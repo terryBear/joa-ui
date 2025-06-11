@@ -1,9 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Dropdown } from 'primereact/dropdown'
 import { InputMask } from 'primereact/inputmask'
 import { InputText } from 'primereact/inputtext'
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { Form } from 'react-bootstrap'
 import { COUNTRIES, PHONE_COUNTRIES } from '../../../constants/countries'
 import { StepFormTemplateProps } from '../../../types/forms'
@@ -13,20 +11,7 @@ const data = {
 	description: 'Share your contact details, and let’s start crafting your dream safari experience!',
 }
 
-export const ContactInfo: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
-	const [contact, setContact] = useState<any>({
-		name: '',
-		email: '',
-		phone_code: '',
-		phone: '',
-		country: '',
-	})
-
-	useEffect(() => {
-		if (contact) {
-			handleFormChange('contact', contact)
-		}
-	}, [contact])
+export const ContactInfo: FC<StepFormTemplateProps> = ({ handleFormChange, formData }) => {
 	return (
 		<div className='form-detail'>
 			<h4>{data.title}</h4>
@@ -35,8 +20,8 @@ export const ContactInfo: FC<StepFormTemplateProps> = ({ handleFormChange }) => 
 				<Form.Label className='fw-bold w-100'>Full Name:</Form.Label>
 				<InputText
 					className='w-75'
-					value={contact.name}
-					onChange={(e) => setContact({ ...contact, name: e.target.value })}
+					value={formData.contact.name}
+					onChange={(e) => handleFormChange('contact', { ...formData.contact, name: e.target.value })}
 					placeholder='Ex: John Doe'
 				/>
 			</Form.Group>
@@ -46,19 +31,16 @@ export const ContactInfo: FC<StepFormTemplateProps> = ({ handleFormChange }) => 
 					className='w-75'
 					id='email'
 					placeholder='example@mail.com'
-					value={contact.email}
-					onChange={(e) => setContact({ ...contact, email: e.target.value })}
+					value={formData.contact.email}
+					onChange={(e) => handleFormChange('contact', { ...formData.contact, email: e.target.value })}
 				/>
 			</Form.Group>
 			<Form.Group className='mb-4'>
 				<Form.Label className='fw-bold w-100'>Phone:</Form.Label>
 
 				<Dropdown
-					value={contact.phone_code}
-					onChange={(e) => {
-						console.log(e)
-						setContact({ ...contact, phone_code: e.value })
-					}}
+					value={formData.contact.phone_code}
+					onChange={(e) => handleFormChange('contact', { ...formData.contact, phone_code: e.target.value })}
 					options={PHONE_COUNTRIES}
 					optionLabel='name'
 					placeholder='Ex: +1'
@@ -69,15 +51,15 @@ export const ContactInfo: FC<StepFormTemplateProps> = ({ handleFormChange }) => 
 					id='phone'
 					mask='(999) 999-9999'
 					placeholder='(999) 999-9999'
-					value={contact.phone}
-					onChange={(e) => setContact({ ...contact, phone: e.target.value })}
+					value={formData.contact.phone}
+					onChange={(e) => handleFormChange('contact', { ...formData.contact, phone: e.target.value })}
 				/>
 			</Form.Group>
 			<Form.Group className='mb-4'>
 				<Form.Label className='fw-bold w-100'>Country of Residence:</Form.Label>
 				<Dropdown
-					value={contact.country}
-					onChange={(e) => setContact({ ...contact, country: e.value })}
+					value={formData.contact.country}
+					onChange={(e) => handleFormChange('contact', { ...formData.contact, country: e.target.value })}
 					options={COUNTRIES}
 					optionLabel='name'
 					placeholder='Select a Country'

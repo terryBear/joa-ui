@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Dropdown } from 'primereact/dropdown'
 import { InputText } from 'primereact/inputtext'
 import { InputTextarea } from 'primereact/inputtextarea'
 import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { COUNTRIES } from '../../constants/countries'
 import { useSafariContext } from '../../Providers/SafariProvider'
 import { useContactService } from '../../services/useContactService'
 import { Tour } from '../../types/tours'
@@ -20,7 +23,8 @@ export const TourBookingForm = ({ tour, travellersChildren, travellers, travelDa
 	const { createBooking } = useContactService()
 	const { handleSnackbar } = useSafariContext()
 	const [contact, setContact] = useState<any>({
-		tour: tour,
+		// @ts-ignore
+		tour: tour?.id,
 		contact: {
 			name: '',
 			email: '',
@@ -35,11 +39,16 @@ export const TourBookingForm = ({ tour, travellersChildren, travellers, travelDa
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
+		const params = { ...contact }
+		// @ts-ignore
+		params.tour = tour.id
+		const _date = new Date(travelDate)
+		params.travel_date = `${_date.getFullYear()}-${_date.getMonth()}-${_date.getDate()}`
+		params.country = contact.country.code
 		try {
 			// Here you would typically handle the form submission,
 			// such as sending the data to an API or processing it.
-			console.log('Form submitted:', contact)
-			await createBooking(contact)
+			await createBooking(params)
 			handleSnackbar({
 				message: 'Your message has been sent successfully.',
 				severity: 'success',
@@ -98,17 +107,17 @@ export const TourBookingForm = ({ tour, travellersChildren, travellers, travelDa
 				/>
 			</Form.Group>
 			<Form.Group className='mb-4'>
-				<InputText
-					className='w-100'
+				<Dropdown
+					value={contact.country}
+					onChange={(e) => {
+						console.log(e)
+						setContact({ ...contact, country: e.value })
+					}}
+					options={COUNTRIES}
+					optionLabel='name'
 					id='country'
 					placeholder='Country of Residence'
-					value={contact.country}
-					onChange={(e) =>
-						setContact({
-							...contact,
-							country: e.target.value,
-						})
-					}
+					className='w-100'
 				/>
 			</Form.Group>
 			<Form.Group className='mb-4'>

@@ -1,8 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { RadioButton } from 'primereact/radiobutton'
 import { Slider } from 'primereact/slider'
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { Form } from 'react-bootstrap'
 import { StepFormTemplateProps } from '../../../types/forms'
 import { formatCurrency } from '../../../utils'
@@ -12,22 +10,7 @@ const data = {
 	description: 'Complete the form below to help us tailor a personalized itinerary that reflects your preferences and budget.',
 }
 
-export const Budget: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
-	const [budget, setBudget] = useState<number | [number, number] | null | undefined>(5000)
-	const [mostImportant, setMostImportant] = useState<string>('')
-
-	useEffect(() => {
-		console.log(mostImportant)
-	}, [mostImportant])
-
-	useEffect(() => {
-		const Budget = {
-			budget,
-			mostImportant,
-		}
-		handleFormChange('', Budget)
-	}, [budget, mostImportant])
-
+export const Budget: FC<StepFormTemplateProps> = ({ handleFormChange, formData }) => {
 	return (
 		<div className='form-detail'>
 			<h4>{data.title}</h4>
@@ -36,9 +19,8 @@ export const Budget: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 			<Form.Group className='mb-2'>
 				<Form.Label className='fw-bold'>What is your budget for the entire trip? (Per person)</Form.Label>
 				<Slider
-					// @ts-ignore
-					value={budget}
-					onChange={(e) => setBudget(e.value)}
+					value={formData.budget}
+					onChange={(e) => handleFormChange('budget', e.value)}
 					min={5000}
 					max={45000}
 					step={100}
@@ -51,8 +33,7 @@ export const Budget: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 				<small>{formatCurrency(45000, 'USD')}</small>
 			</div>
 			<div className='my-4'>
-				// @ts-ignore
-				<h3 className='m-0'>{formatCurrency(budget, 'USD')}</h3>
+				<h3 className='m-0'>{formatCurrency(formData.budget, 'USD')}</h3>
 				<p className='m-0'>Per Person</p>
 			</div>
 			<Form.Group className='mb-2'>
@@ -63,11 +44,11 @@ export const Budget: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 							type='radio'
 							name='mostImportant'
 							id='budgetPriority'
-							checked={mostImportant === 'budgetPriority'}
+							checked={formData.mostImportant === 'budgetPriority'}
 							value='budgetPriority'
 							onChange={(e) => {
 								console.log(e)
-								setMostImportant(e.target.value)
+								handleFormChange('mostImportant', e.target.value)
 							}}
 							className='me-2'
 						/>
@@ -80,9 +61,9 @@ export const Budget: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 							type='radio'
 							name='mostImportant'
 							id='rightTripBudgetIncrease'
-							checked={mostImportant === 'rightTripBudgetIncrease'}
+							checked={formData.mostImportant === 'rightTripBudgetIncrease'}
 							value='rightTripBudgetIncrease'
-							onChange={(e) => setMostImportant(e.target.value)}
+							onChange={(e) => handleFormChange('mostImportant', e.target.value)}
 							className='me-2'
 						/>
 						For the right trip, I'll increase my budget.
@@ -94,9 +75,9 @@ export const Budget: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
 							type='radio'
 							name='mostImportant'
 							id='perfectTrip'
-							checked={mostImportant === 'perfectTrip'}
+							checked={formData.mostImportant === 'perfectTrip'}
 							value='perfectTrip'
-							onChange={(e) => setMostImportant(e.target.value)}
+							onChange={(e) => handleFormChange('mostImportant', e.target.value)}
 							className='me-2'
 						/>
 						Taking the perfect trip

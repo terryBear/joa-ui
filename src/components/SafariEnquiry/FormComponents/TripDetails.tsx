@@ -1,12 +1,9 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Calendar } from 'primereact/calendar'
 import { InputNumber } from 'primereact/inputnumber'
 import { InputSwitch } from 'primereact/inputswitch'
 import { MultiSelect } from 'primereact/multiselect'
 import { Slider } from 'primereact/slider'
-import { Nullable } from 'primereact/ts-helpers'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { DESTINATIONS } from '../../../constants/destinations'
 import { StepFormTemplateProps } from '../../../types/forms'
@@ -19,7 +16,7 @@ const data = {
 
 const destination_options = DESTINATIONS.map((destination) => ({
 	name: destination.title,
-	code: destination.id,
+	code: destination.code,
 }))
 
 const adultAgeRanges = [
@@ -39,156 +36,144 @@ const childAgeRanges = [
 	{ name: '15-16', code: '15-16' },
 ]
 
-export const TripDetails: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
-	const [selectedDestinations, setSelectedDestinations] = useState<string[]>([])
-	const [travelDate, setTravelDate] = useState<Nullable<Date>>(null)
-	const [nights, setNights] = useState<[number, number]>([5, 45])
-	const [adults, setAdults] = useState<number | null>(0)
+export const TripDetails: FC<StepFormTemplateProps> = ({ handleFormChange, formData }) => {
 	const [hasChildren, setHasChildren] = useState<boolean>(false)
-	const [children, setChildren] = useState<number | null>(0)
-	const [adultAges, setAdultAges] = useState<number[]>([])
-	const [childAges, setChildAges] = useState<number[]>([])
-
-	useEffect(() => {
-		const tripDetails = {
-			selectedDestinations,
-			travelDate,
-			nights,
-			adults,
-			hasChildren,
-			children,
-			adultAges,
-			childAges,
-		}
-		handleFormChange('', tripDetails)
-	}, [selectedDestinations, travelDate, nights, adults, hasChildren, children, adultAges, childAges])
 
 	return (
-		<div className='form-detail'>
-			<h4>{data.title}</h4>
-			<p>{data.description}</p>
-			<Form.Group className='mb-4'>
-				<Form.Label className='fw-bold'>Where would you like to travel?</Form.Label>
-				<div>
-					<MultiSelect
-						value={selectedDestinations}
-						onChange={(e) => setSelectedDestinations(e.value)}
-						options={destination_options}
-						optionLabel='name'
-						placeholder='Select Destinations...'
-						className='w-50'
-					/>
-				</div>
-			</Form.Group>
-			<Form.Group className='mb-4'>
-				<Form.Label className=' fw-bold'>When would you like to depart?</Form.Label>
-				<div>
-					<Calendar
-						value={travelDate}
-						onChange={(e) => setTravelDate(e.value)}
-						placeholder='Select Departure Date'
-						className='w-50'
-					/>
-				</div>
-			</Form.Group>
-			<Form.Group className='mb-4'>
-				<div>
-					<Form.Label className='fw-bold'>How many nights on safari?</Form.Label>
-				</div>
-				<div>
-					<Slider
-						value={nights}
-						onChange={(e) => {
-							// @ts-ignore
-							setNights(e.value)
-						}}
-						range
-						min={5}
-						max={45}
-						step={1}
-					/>
-					<div>
-						<Form.Label className='mb-0 mt-2'>
-							<small>
-								<i>*nights in Country</i>
-							</small>
-						</Form.Label>
-					</div>
-					<div className='d-flex justify-content-between'>
-						<small>
-							{nights[0]} <sup>Nights</sup>
-						</small>
-						<small>
-							{nights[1] > 45 ? `${nights[1]}+` : nights[1]}
-							<sup>Nights</sup>
-						</small>
-					</div>
-				</div>
-			</Form.Group>
-			<Form.Group className='mb-4'>
-				<Form.Label className=' fw-bold'>How many adults will be travelling?</Form.Label>
-				<div className='d-flex align-items-center'>
-					<InputNumber
-						value={adults}
-						onValueChange={(e) => {
-							// @ts-ignore
-							setAdults(e.value)
-						}}
-						min={0}
-						max={100}
-						className='w-10'
-					/>
-					<Form.Label className='my-0 ms-5 d-flex align-items-center'>
-						<InputSwitch checked={hasChildren} onChange={(e) => setHasChildren(e.value)} className='mx-2' />
-						I'm travelling with children
-					</Form.Label>
-				</div>
-			</Form.Group>
-			<Form.Group className='mb-4'>
-				<Form.Label className=' fw-bold'>What are the ages of the adults travelling?</Form.Label>
-				<div>
-					<MultiSelect
-						value={adultAges}
-						onChange={(e) => setAdultAges(e.value)}
-						options={adultAgeRanges}
-						optionLabel='name'
-						placeholder='Select Age Ranges...'
-						className='w-50'
-					/>
-				</div>
-			</Form.Group>
-			{hasChildren && (
-				<>
+		<>
+			{Object.keys(formData).length > 0 && (
+				<div className='form-detail'>
+					<h4>{data.title}</h4>
+					<p>{data.description}</p>
 					<Form.Group className='mb-4'>
-						<Form.Label className=' fw-bold'>How many children will be travelling?</Form.Label>
+						<Form.Label className='fw-bold'>Where would you like to travel?</Form.Label>
 						<div>
-							<InputNumber
-								value={children}
-								onValueChange={(e) => {
-									// @ts-ignore
-									setChildren(e.value)
+							<MultiSelect
+								value={formData.selectedDestinations}
+								onChange={(e) => {
+									handleFormChange('selectedDestinations', e.value)
 								}}
-								min={0}
-								max={20}
-								className='w-10'
+								options={destination_options}
+								optionLabel='name'
+								placeholder='Select Destinations...'
+								className='w-50'
 							/>
 						</div>
 					</Form.Group>
 					<Form.Group className='mb-4'>
-						<Form.Label className=' fw-bold'>What are the ages of the children travelling?</Form.Label>
+						<Form.Label className=' fw-bold'>When would you like to depart?</Form.Label>
+						<div>
+							<Calendar
+								value={formData.travelDate}
+								onChange={(e) => {
+									handleFormChange('travelDate', e.value)
+								}}
+								placeholder='Select Departure Date'
+								className='w-50'
+							/>
+						</div>
+					</Form.Group>
+					<Form.Group className='mb-4'>
+						<div>
+							<Form.Label className='fw-bold'>How many nights on safari?</Form.Label>
+						</div>
+						<div>
+							<Slider
+								value={formData.nights}
+								onChange={(e) => {
+									handleFormChange('nights', e.value)
+								}}
+								range
+								min={5}
+								max={45}
+								step={1}
+							/>
+							<div>
+								<Form.Label className='mb-0 mt-2'>
+									<small>
+										<i>*nights in Country</i>
+									</small>
+								</Form.Label>
+							</div>
+							<div className='d-flex justify-content-between'>
+								<small>
+									{formData.nights[0]} <sup>Nights</sup>
+								</small>
+								<small>
+									{formData.nights[1] > 45 ? `${formData.nights[1]}+` : formData.nights[1]}
+									<sup>Nights</sup>
+								</small>
+							</div>
+						</div>
+					</Form.Group>
+					<Form.Group className='mb-4'>
+						<Form.Label className=' fw-bold'>How many adults will be travelling?</Form.Label>
+						<div className='d-flex align-items-center'>
+							<InputNumber
+								value={formData.adults}
+								onValueChange={(e) => {
+									handleFormChange('adults', e.value)
+								}}
+								min={0}
+								max={100}
+								className='w-10'
+							/>
+							<Form.Label className='my-0 ms-5 d-flex align-items-center'>
+								<InputSwitch checked={hasChildren} onChange={(e) => setHasChildren(e.value)} className='mx-2' />
+								I'm travelling with children
+							</Form.Label>
+						</div>
+					</Form.Group>
+					<Form.Group className='mb-4'>
+						<Form.Label className=' fw-bold'>What are the ages of the adults travelling?</Form.Label>
 						<div>
 							<MultiSelect
-								value={childAges}
-								onChange={(e) => setChildAges(e.value)}
-								options={childAgeRanges}
+								value={formData.adultAges}
+								onChange={(e) => {
+									handleFormChange('adultAges', e.value)
+								}}
+								options={adultAgeRanges}
 								optionLabel='name'
 								placeholder='Select Age Ranges...'
 								className='w-50'
 							/>
 						</div>
 					</Form.Group>
-				</>
+					{hasChildren && (
+						<>
+							<Form.Group className='mb-4'>
+								<Form.Label className=' fw-bold'>How many children will be travelling?</Form.Label>
+								<div>
+									<InputNumber
+										value={formData.children}
+										onValueChange={(e) => {
+											handleFormChange('children', e.value)
+										}}
+										min={0}
+										max={20}
+										className='w-10'
+									/>
+								</div>
+							</Form.Group>
+							<Form.Group className='mb-4'>
+								<Form.Label className=' fw-bold'>What are the ages of the children travelling?</Form.Label>
+								<div>
+									<MultiSelect
+										value={formData.childAges}
+										onChange={(e) => {
+											handleFormChange('childAges', e.value)
+										}}
+										options={childAgeRanges}
+										optionLabel='name'
+										placeholder='Select Age Ranges...'
+										className='w-50'
+									/>
+								</div>
+							</Form.Group>
+						</>
+					)}
+				</div>
 			)}
-		</div>
+		</>
 	)
 }

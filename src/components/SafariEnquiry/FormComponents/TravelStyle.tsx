@@ -1,7 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Checkbox } from 'primereact/checkbox'
 import { InputTextarea } from 'primereact/inputtextarea'
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { Form } from 'react-bootstrap'
 import { StepFormTemplateProps } from '../../../types/forms'
 
@@ -59,14 +59,7 @@ const travelStyle_options = [
 	},
 ]
 
-export const TravelStyle: FC<StepFormTemplateProps> = ({ handleFormChange }) => {
-	const [travelStyles, setTravelStyles] = useState<string[]>([])
-
-	useEffect(() => {
-		if (travelStyles) {
-			handleFormChange('', travelStyles)
-		}
-	}, [travelStyles])
+export const TravelStyle: FC<StepFormTemplateProps> = ({ handleFormChange, formData }) => {
 	return (
 		<div className='form-detail'>
 			<h4>{data.title}</h4>
@@ -79,9 +72,9 @@ export const TravelStyle: FC<StepFormTemplateProps> = ({ handleFormChange }) => 
 						<div key={option.code} className='mb-2'>
 							<Form.Label className='d-flex align-items-center'>
 								<Checkbox
-									checked={travelStyles.includes(option.code)}
+									checked={formData.travelStyles.includes(option.code)}
 									onChange={(e) => {
-										const selectedOptions = [...travelStyles]
+										const selectedOptions = [...formData.travelStyles]
 										if (e.checked) {
 											selectedOptions.push(option.code)
 										} else {
@@ -90,7 +83,7 @@ export const TravelStyle: FC<StepFormTemplateProps> = ({ handleFormChange }) => 
 												selectedOptions.splice(index, 1)
 											}
 										}
-										setTravelStyles(selectedOptions)
+										handleFormChange('travelStyles', selectedOptions)
 									}}
 									className='mx-2'
 								/>
@@ -110,7 +103,18 @@ export const TravelStyle: FC<StepFormTemplateProps> = ({ handleFormChange }) => 
 					<li>Are you celebrating a special occasion?</li>
 					<li>What are your interests (safari, food, wine, photography)</li>
 				</ul>
-				<InputTextarea rows={5} cols={30} autoResize className='w-100' placeholder='Ex: Safari, food, wine, photography...' />
+				<InputTextarea
+					value={formData.travelDescription}
+					rows={5}
+					cols={30}
+					autoResize
+					className='w-100'
+					placeholder='Ex: Safari, food, wine, photography...'
+					onChange={(e: any) => {
+						console.log(e.target.value)
+						handleFormChange('travelDescription', e.target.value)
+					}}
+				/>
 			</Form.Group>
 		</div>
 	)

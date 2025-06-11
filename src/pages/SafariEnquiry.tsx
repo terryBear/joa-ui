@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { JSX, useState } from 'react'
+import { JSX, useMemo, useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import { Banner } from '../components/Banner/Banner'
 import { Budget } from '../components/SafariEnquiry/FormComponents/Budget'
@@ -24,8 +24,8 @@ export const SafariEnquiry = () => {
 	const { handleSnackbar } = useSafariContext()
 	const [activeStep, setActiveStep] = useState(1)
 	const [formData, setFormData] = useState<{
-		selectedDestinations: string[]
-		travelDate: Nullable<Date>
+		selectedDestinations: any[]
+		travelDate: Date | number | string | Nullable<Date>
 		nights: [number, number]
 		adults: number | null
 		hasChildren: boolean
@@ -38,15 +38,16 @@ export const SafariEnquiry = () => {
 			email: string
 			phone_code: string
 			phone: string
-			country: string
+			country: any
 		}
 		budget: number | [number, number] | null | undefined
 		mostImportant: string
 		message: string
 		subject: string
+		travelDescription: string
 	}>({
 		selectedDestinations: [],
-		travelDate: null,
+		travelDate: new Date(),
 		nights: [5, 45],
 		adults: 0,
 		hasChildren: false,
@@ -65,32 +66,68 @@ export const SafariEnquiry = () => {
 		mostImportant: '',
 		message: 'Booking an African safari',
 		subject: 'Safari Enquiry',
+		travelDescription: '',
 	})
-
-	const handleFormChange = (key: string, value: any) => {
-		let data = {
-			...formData,
-		}
-		if (key) {
-			// @ts-expect-error No index signature with a parameter of type 'string' was found
-			data[key] = value
-		} else {
-			data = {
-				...formData,
-				...value, // Assuming value is an object with the same structure as formData
-			}
-		}
-		setFormData({ ...data })
-	}
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
+		const params: any = {}
+		params.destination = formData.selectedDestinations.length > 0 ? formData.selectedDestinations.map((dest: any) => dest.code) : []
+		// params.destination = `['${params.destination.join(',')}']`
+
+		if (formData?.travelDate) {
+			const _date = new Date(formData?.travelDate)
+			params.departure_date = `${_date.getFullYear()}-${_date.getMonth()}-${_date.getDate()}`
+		}
+		params.duration = formData.nights[1] - formData.nights[0] + 1
+		params.adults = formData.adults
+		params.adult_age_ranges =
+			formData.adultAges.length > 0 ? formData.adultAges.map((age: any) => String(age.code)) : formData.adultAges
+		params.adult_age_ranges = params.adult_age_ranges.join(',')
+		params.children = formData.children
+		params.children_age_ranges =
+			formData.childAges.length > 0 ? formData.childAges.map((age: any) => String(age.code)) : formData.childAges
+		params.children_age_ranges = params.children_age_ranges.join(',')
+		params.travel_style = formData.travelStyles
+		params.travel_message = formData.travelDescription
+		params.budget = formData.budget
+		params.budget_importance = formData.mostImportant
+		params.country_of_residence = formData.contact.country.code
+		params.contact = formData.contact
+		params.contact.country = formData.contact.country.code
+		// @ts-ignore
+		params.contact.phone_code = formData.contact.phone_code?.code
+		params.country = params.contact.country
 		try {
-			await createBookingRequest(formData)
+			await createBookingRequest(params)
 			handleSnackbar({
 				message: 'Your message has been sent successfully.',
 				severity: 'success',
 			})
+			setFormData({
+				selectedDestinations: [],
+				travelDate: new Date(),
+				nights: [5, 45],
+				adults: 0,
+				hasChildren: false,
+				children: 0,
+				adultAges: [],
+				childAges: [],
+				travelStyles: [],
+				contact: {
+					name: '',
+					email: '',
+					phone_code: '',
+					phone: '',
+					country: '',
+				},
+				budget: 5000,
+				mostImportant: '',
+				message: 'Booking an African safari',
+				subject: 'Safari Enquiry',
+				travelDescription: '',
+			})
+			setActiveStep(1)
 		} catch (error) {
 			console.error('Error sending message:', error)
 			handleSnackbar({
@@ -100,31 +137,42 @@ export const SafariEnquiry = () => {
 		}
 	}
 
-	const [steps] = useState<StepWizardProps[]>([
-		{
-			index: 1,
-			label: 'Trip Details',
-			element: <TripDetails index={1} handleFormChange={handleFormChange} />,
-		},
+	const handleFormChange = (key: string, value?: any) => {
+		console.log(`Updating formData: ${key} =`, value)
+		setFormData({
+			...formData,
+			[key]: value,
+		})
+	}
 
-		{
-			index: 2,
-			label: 'Travel Style',
-			element: <TravelStyle index={2} handleFormChange={handleFormChange} />,
-		},
+	const [steps] = useMemo(() => {
+		const steps: StepWizardProps[] = [
+			{
+				index: 1,
+				label: 'Trip Details',
+				element: <TripDetails formData={formData} index={1} handleFormChange={handleFormChange} />,
+			},
 
-		{
-			index: 3,
-			label: 'Budget',
-			element: <Budget index={3} handleFormChange={handleFormChange} />,
-		},
+			{
+				index: 2,
+				label: 'Travel Style',
+				element: <TravelStyle formData={formData} index={2} handleFormChange={handleFormChange} />,
+			},
 
-		{
-			index: 4,
-			label: 'Contact Info',
-			element: <ContactInfo index={4} handleFormChange={handleFormChange} />,
-		},
-	])
+			{
+				index: 3,
+				label: 'Budget',
+				element: <Budget formData={formData} index={3} handleFormChange={handleFormChange} />,
+			},
+
+			{
+				index: 4,
+				label: 'Contact Info',
+				element: <ContactInfo formData={formData} index={4} handleFormChange={handleFormChange} />,
+			},
+		]
+		return [steps, steps.length]
+	}, [formData, handleFormChange])
 
 	return (
 		<MainAppLayout>
@@ -156,10 +204,11 @@ export const SafariEnquiry = () => {
 								<div>
 									{activeStep !== 1 && (
 										<Button
-											variant='outline-secondary'
+											variant='secondary'
 											disabled={activeStep === 1}
 											className='px-5'
 											size='sm'
+											type='button'
 											onClick={() => {
 												setActiveStep(activeStep - 1)
 											}}>
@@ -167,20 +216,21 @@ export const SafariEnquiry = () => {
 										</Button>
 									)}
 								</div>
-								<Button
-									variant='primary'
-									onClick={() => {
-										if (activeStep < steps.length) {
-											setActiveStep(activeStep + 1)
-										} else {
-											// Submit the form
-										}
-									}}
-									className='px-5'
-									size='sm'
-									type={activeStep === steps.length ? 'submit' : 'button'}>
-									{activeStep === steps.length ? 'Submit' : 'Next'}
-								</Button>
+								{activeStep < steps.length && (
+									<Button
+										variant='primary'
+										onClick={() => setActiveStep(activeStep + 1)}
+										className='px-5'
+										size='sm'
+										type='button'>
+										{activeStep === steps.length ? 'Submit' : 'Next'}
+									</Button>
+								)}
+								{activeStep === steps.length && (
+									<Button variant='primary' className='px-5' size='sm' type='submit'>
+										Submit
+									</Button>
+								)}
 							</div>
 						</div>
 					</Form>
