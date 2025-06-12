@@ -7,7 +7,7 @@ import { Nullable } from 'primereact/ts-helpers'
 import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Container, Row, Tab, Tabs } from 'react-bootstrap'
 import { Link, NavLink, useLocation, useParams } from 'react-router'
-import { CheckCircle, MinusIcon, PlusIcon } from '../components/Icons/Icons'
+import { CheckCircle, MinusIcon, PlusIcon, StarIconFilled, StarIconOutline } from '../components/Icons/Icons'
 import { MapElement } from '../components/Map/Map'
 import { PageDetailCarousel } from '../components/Page/PageDetail/components/PageDetailCarousel'
 import { SafariTourBooking } from '../components/Tours/SafariTourBooking/SafariTourBooking'
@@ -17,26 +17,11 @@ import { useSafariContext } from '../Providers/SafariProvider'
 import { useSafariService } from '../services/useSafariService'
 import { ItinerarySummary, Tour } from '../types/tours'
 import { Divider } from '../ui-library/Divider'
-import { formatCurrency } from '../utils'
+import { formatCurrency, formatNumber, getRandomArbitrary } from '../utils'
 
 export const TourPage = () => {
 	const { getSafariDetails, getSafariList } = useSafariService()
 	const [tours, setTours] = useState<Tour[]>([])
-
-	const getSafariTours = async () => {
-		const response = await getSafariList()
-		if (response) {
-			setTours(response)
-		} else {
-			console.error('Failed to fetch safari tours')
-		}
-		setIsLoading(false)
-	}
-
-	useEffect(() => {
-		setIsLoading(true)
-		getSafariTours()
-	}, [])
 	const { setIsLoading } = useSafariContext()
 	const { pathname } = useLocation()
 	const [links, setLinks] = useState<string[]>([])
@@ -67,12 +52,19 @@ export const TourPage = () => {
 			setIsLoading(false)
 		}
 	}
+	const getSafariTours = async () => {
+		const response = await getSafariList()
+		if (response) {
+			setTours(response)
+		} else {
+			console.error('Failed to fetch safari tours')
+		}
+	}
 
 	useEffect(() => {
 		if (slug) {
 			fetchTour(slug)
 		}
-		console.log(links)
 	}, [slug])
 
 	useEffect(() => {
@@ -131,6 +123,11 @@ export const TourPage = () => {
 		}
 	}, [pathname])
 
+	useEffect(() => {
+		setIsLoading(true)
+		getSafariTours()
+	}, [])
+
 	return (
 		<MainAppLayout>
 			{tour && (
@@ -142,8 +139,40 @@ export const TourPage = () => {
 								<h2 className='mt-3'>{tour?.title}</h2>
 							</Col>
 
-							<Col xs={12} md={8} lg={9} className=''>
-								<PageDetailCarousel size='full' slides={tour.images} />
+							<Col xs={12} md={8} lg={9}>
+								<div className='position-relative d-flex h-100 w-100 flex-column'>
+									<PageDetailCarousel size='full' slides={tour.images} />
+									<p className='rating-float'>
+										{tour?.rating && tour?.reviews_count && (
+											<>
+												<span>
+													{Array.from({ length: Number(tour.rating) }, (_, _i) => (
+														<StarIconFilled key={_i} className='me-1' />
+													))}
+													{Array.from({ length: 5 - Math.floor(Number(tour.rating)) }, (_, _i) => (
+														<StarIconOutline key={_i} className='me-1' />
+													))}
+												</span>
+												<span>
+													{tour?.rating} | {tour.reviews_count} reviews
+												</span>
+											</>
+										)}
+
+										{!tour?.rating && (
+											<>
+												<span>
+													<StarIconFilled className='me-1' />
+													<StarIconFilled className='me-1' />
+													<StarIconFilled className='me-1' />
+													<StarIconFilled className='me-1' />
+													<StarIconOutline className='me-1' />
+												</span>
+												<span>{formatNumber(getRandomArbitrary())} reviews</span>
+											</>
+										)}
+									</p>
+								</div>
 							</Col>
 							<Col xs={12} md={4} lg={3} className=''>
 								<div className='card p-4 border-1 mb-3 '>

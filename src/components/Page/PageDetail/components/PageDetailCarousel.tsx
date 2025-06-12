@@ -22,11 +22,11 @@ export interface PageDetailCarouselProps {
 export const PageDetailCarousel = ({ size = 'md', interval = 4000, caption = false, slides = [] }: PageDetailCarouselProps) => {
 	return (
 		<Carousel
-			className='page-detail-carousel'
+			className='page-detail-carousel w-100'
 			style={{
 				borderRadius: '0.25rem',
 				overflow: 'hidden',
-				height: SIZES[`${size}`] ?? '500px',
+				height: SIZES[`${size}`] ?? size,
 			}}
 			interval={interval}
 			indicators={false}>

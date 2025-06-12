@@ -33,7 +33,7 @@ export const TourCard = ({ handleClick = () => {}, tour = {} as Tour }: TourCard
 				</span>
 			</div>
 			<p className='rating-float'>
-				{tourData?.reviews && tourData?.rating && tourData?.reviews?.length > 0 && (
+				{tourData?.rating && tourData?.rating && tourData?.reviews_count && (
 					<>
 						<span>
 							{Array.from({ length: Number(tourData.rating) }, (_, _i) => (
@@ -44,7 +44,7 @@ export const TourCard = ({ handleClick = () => {}, tour = {} as Tour }: TourCard
 							))}
 						</span>
 						<span>
-							{tourData?.rating} {tourData.reviews?.length} reviews
+							{tourData?.rating} | {tourData.reviews_count} reviews
 						</span>
 					</>
 				)}

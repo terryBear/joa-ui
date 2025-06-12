@@ -61,7 +61,7 @@
 			svg {
 				width: 20px;
 				height: 20px;
-				color: $ui-secondary;
+				color: $ui-info;
 			}
 		}
 
@@ -146,6 +146,29 @@
 	}
 
 	&.view-grid {
+		.rating-float {
+			position: absolute;
+			right: 0;
+			bottom: $tour-card-content-height;
+			z-index: 999999999;
+			color: #ffff;
+			background: rgba(0, 0, 0, 0.4);
+			align-items: center;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			margin: 0;
+
+			span {
+				font-weight: 700;
+			}
+
+			svg {
+				width: 20px;
+				height: 20px;
+				color: $ui-info;
+			}
+		}
 		.tour-card__content {
 			position: relative;
 			z-index: 3;
@@ -252,26 +275,35 @@
 	margin-left: 20px !important;
 }
 
-.rating-float {
-	position: absolute;
-	right: 0;
-	bottom: $tour-card-content-height;
-	z-index: 999999999;
-	color: #ffff;
-	background: rgba(0, 0, 0, 0.4);
-	align-items: center;
-	padding: 10px;
-	display: flex;
-	flex-direction: column;
-	margin: 0;
+.position-relative {
+	.rating-float {
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+		color: #ffff;
+		background: rgba(0, 0, 0, 0.4);
+		align-items: flex-start;
+		padding: 20px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0;
+		text-align: left;
 
-	span {
-		font-weight: 700;
-	}
+		span {
+			font-weight: 700;
+		}
 
-	svg {
-		width: 20px;
-		height: 20px;
-		color: $ui-secondary;
+		svg {
+			width: 20px;
+			height: 20px;
+			color: $ui-info;
+		}
 	}
+}
+
+.min-height-40 {
+	min-height: 40vh;
 }

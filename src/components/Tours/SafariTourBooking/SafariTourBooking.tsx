@@ -2,9 +2,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import { Tour } from '../../../types/tours'
-import { formatCurrency } from '../../../utils'
+import { formatCurrency, formatNumber, getRandomArbitrary } from '../../../utils'
 import { TourBookingForm } from '../../Forms/TourBooking'
 import { RightArrow, StarIconFilled, StarIconOutline } from '../../Icons/Icons'
+import { PageDetailCarousel } from '../../Page/PageDetail/components/PageDetailCarousel'
 import { colClass } from '../../Team/Team'
 
 interface SafariTourBookingProps {
@@ -80,7 +81,44 @@ export const SafariTourBooking = ({ tour, travelDate, travellers, travellersChil
 							</span>
 						</div>
 						<Card className='border-1'>
-							<img src={tour?.featured_image} alt={tour?.title} className='card-img-top' />
+							<div className='position-relative d-flex h-100 w-100 flex-column min-height-40 p-0'>
+								{tour?.featured_image ? (
+									<img src={tour?.featured_image} alt={tour?.title} className='card-img-top' />
+								) : (
+									<PageDetailCarousel size='40vh' slides={tour.images} />
+								)}
+								<p className='rating-float'>
+									{tour?.rating && tour?.reviews_count && (
+										<>
+											<span>
+												{Array.from({ length: Number(tour.rating) }, (_, _i) => (
+													<StarIconFilled key={_i} className='me-1' />
+												))}
+												{Array.from({ length: 5 - Math.floor(Number(tour.rating)) }, (_, _i) => (
+													<StarIconOutline key={_i} className='me-1' />
+												))}
+											</span>
+											<span>
+												{tour?.rating} | {tour.reviews_count} reviews
+											</span>
+										</>
+									)}
+
+									{!tour?.rating && (
+										<>
+											<span>
+												<StarIconFilled className='me-1' />
+												<StarIconFilled className='me-1' />
+												<StarIconFilled className='me-1' />
+												<StarIconFilled className='me-1' />
+												<StarIconOutline className='me-1' />
+											</span>
+											<span>{formatNumber(getRandomArbitrary())} reviews</span>
+										</>
+									)}
+								</p>
+							</div>
+
 							<Card.Body>
 								{tour?.title && <Card.Title>{tour.title}</Card.Title>}
 
@@ -103,15 +141,6 @@ export const SafariTourBooking = ({ tour, travelDate, travellers, travellersChil
 								<p className='tour-detail m-0'>
 									<strong>Experiences: </strong>{' '}
 									{tour.african_safari_experiences.map((dest: any, _index: number) => dest.title).join(', ')}
-								</p>
-								<p className='tour-detail m-0'>
-									{Array.from({ length: Number(tour.rating) }, (_, _i) => (
-										<StarIconFilled key={_i} className='me-1' />
-									))}
-									{Array.from({ length: 5 - Math.floor(Number(tour.rating)) }, (_, _i) => (
-										<StarIconOutline key={_i} className='me-1' />
-									))}
-									{tour.rating ? tour.rating : 'No rating yet'} from {tour.reviews?.length ?? 'No '} reviews
 								</p>
 							</Card.Body>
 						</Card>

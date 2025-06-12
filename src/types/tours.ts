@@ -199,7 +199,7 @@ export interface Tour {
 	features: Features[]
 	highlights: Highlights[]
 	rating?: number
-	reviews?: Reviews[]
+	reviews_count?: number
 }
 
 export interface TourCardProps {
